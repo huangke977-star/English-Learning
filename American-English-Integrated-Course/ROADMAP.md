@@ -147,6 +147,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book7：英语写作训练
 
+当前状态：**已完成**。十二个单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book7-final-review.md`。Phase 4 的文字教材已完成，下一步进入 Book8 真实场景综合任务。
+
 | 章节 | 主题 | 主要产出 |
 | --- | --- | --- |
 | 07-01 | 句子准确性 | 单句和句型造句 |
