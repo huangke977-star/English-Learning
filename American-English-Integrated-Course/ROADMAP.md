@@ -50,7 +50,7 @@ Book1 全册审查记录：`09-Reviews-and-Answers/reviews/book1-final-review.md
 
 ## Book2：听力与自然语流
 
-当前状态：十二个文字单元已完成，并通过逐章审查和全册复审；MP3 音频待制作，下一步进入 Book3。
+当前状态：十二个文字单元已完成，并通过逐章审查和全册复审；12 条自然速度 MP3 已生成并通过音频专项审查，慢速/对比版本待制作，下一步进入 Book3。
 
 | 章节 | 主题 | 主要产出 |
 | --- | --- | --- |
@@ -183,7 +183,7 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book9：复习、测试与答案
 
-当前状态：**已完成**。十个复习、测试和维护单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book9-final-review.md`。文字教材到此完成，后续制作 Book2 MP3、PDF 和页码索引时需按版本重新验证。
+当前状态：**已完成**。十个复习、测试和维护单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book9-final-review.md`。文字教材和 Book2 自然速度 MP3 到此完成，后续制作慢速/对比音频、PDF 和页码索引时需按版本重新验证。
 
 | 章节 | 内容 |
 | --- | --- |
