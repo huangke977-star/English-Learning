@@ -65,6 +65,8 @@ here it is    /hɪr ɪt ɪz/ -> /hɪ rɪt ɪz/
 
 [B2-04 自然速度 MP3](../assets/audio/book2/B2-04-natural-01.mp3)
 
+[B2-04 慢速 MP3](../assets/audio/book2/B2-04-slow-01.mp3) · [B2-04 r 连接对比 MP3](../assets/audio/book2/B2-04-r-contrast-01.mp3)
+
 > 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
 
 ## 学习导航

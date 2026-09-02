@@ -69,6 +69,8 @@ city /ˈsɪti/  -> [ˈsɪɾi]
 
 [B2-09 自然速度 MP3](../assets/audio/book2/B2-09-natural-01.mp3)
 
+[B2-09 慢速 MP3](../assets/audio/book2/B2-09-slow-01.mp3) · [B2-09 清楚/自然对比 MP3](../assets/audio/book2/B2-09-clear-vs-natural-01.mp3)
+
 > 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
 
 ## 学习导航

@@ -77,6 +77,8 @@ I wanted the blue ONE.       （不是其他物品）
 
 [B2-01 自然速度 MP3](../assets/audio/book2/B2-01-natural-01.mp3)
 
+[B2-01 慢速 MP3](../assets/audio/book2/B2-01-slow-01.mp3) · [B2-01 重音对比 MP3](../assets/audio/book2/B2-01-stress-contrast-01.mp3)
+
 > 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
 
 ## 学习导航

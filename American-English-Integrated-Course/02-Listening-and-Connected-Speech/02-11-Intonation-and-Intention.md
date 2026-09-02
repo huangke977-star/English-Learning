@@ -61,6 +61,8 @@
 
 [B2-11 自然速度 MP3](../assets/audio/book2/B2-11-natural-01.mp3)
 
+[B2-11 慢速 MP3](../assets/audio/book2/B2-11-slow-01.mp3) · [B2-11 语调对比 MP3](../assets/audio/book2/B2-11-intonation-contrast-01.mp3)
+
 > 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
 
 ## 学习导航

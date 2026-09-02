@@ -61,6 +61,8 @@
 
 [B2-07 自然速度 MP3](../assets/audio/book2/B2-07-natural-01.mp3)
 
+[B2-07 慢速 MP3](../assets/audio/book2/B2-07-slow-01.mp3) · [B2-07 弱读/重音对比 MP3](../assets/audio/book2/B2-07-weak-vs-stressed-01.mp3)
+
 > 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
 
 ## 学习导航
