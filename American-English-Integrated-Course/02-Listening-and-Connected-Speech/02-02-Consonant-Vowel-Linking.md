@@ -65,6 +65,12 @@ need a break   /nid ə breɪk/   -> /ni də breɪk/
 2. 在 IPA 中圈出相连的辅音和元音。
 3. 听回放后判断词边界是否仍能理解。
 
+## 配套音频
+
+[B2-02 自然速度 MP3](../assets/audio/book2/B2-02-natural-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
+
 ## 学习导航
 
 - 先复习：Book2 §02-01 意群与句子重音

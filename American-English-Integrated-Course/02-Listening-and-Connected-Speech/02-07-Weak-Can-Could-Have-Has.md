@@ -57,6 +57,12 @@
 
 选择表中 10 句，标出弱读词；再写两句需要强调 `can`、`have` 或 `has` 的对比句并录音。
 
+## 配套音频
+
+[B2-07 自然速度 MP3](../assets/audio/book2/B2-07-natural-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
+
 ## 学习导航
 
 - 先复习：Book2 §02-06 弱读 and、for、of

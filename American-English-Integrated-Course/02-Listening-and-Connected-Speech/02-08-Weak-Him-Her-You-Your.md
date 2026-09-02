@@ -57,6 +57,12 @@
 
 从表中选择 10 句，录音自然读；再选择 `him`、`her`、`you`、`your` 各一句进行强调对比。
 
+## 配套音频
+
+[B2-08 自然速度 MP3](../assets/audio/book2/B2-08-natural-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
+
 ## 学习导航
 
 - 先复习：Book2 §02-07 弱读 can、could、have、has
