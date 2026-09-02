@@ -109,6 +109,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book5：高频口语句型
 
+当前状态：**已完成**。十二个单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book5-final-review.md`。下一步进入 Book6 分级阅读训练。
+
 | 章节 | 主题 |
 | --- | --- |
 | 05-01 | 打招呼、寒暄和结束对话 |
