@@ -128,6 +128,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book6：分级阅读训练
 
+当前状态：**已完成**。十二个单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book6-final-review.md`。Phase 3 的文字教材已完成，下一步进入 Book7 英语写作训练。
+
 | 章节 | 材料类型 | 主要能力 |
 | --- | --- | --- |
 | 06-01 | 单句和短句 | 句意与基本结构 |
