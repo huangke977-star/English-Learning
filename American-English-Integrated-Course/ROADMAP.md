@@ -183,6 +183,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book9：复习、测试与答案
 
+当前状态：**已完成**。十个复习、测试和维护单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book9-final-review.md`。文字教材到此完成，后续制作 Book2 MP3、PDF 和页码索引时需按版本重新验证。
+
 | 章节 | 内容 |
 | --- | --- |
 | 09-01 | 发音和 IPA 复习 |
