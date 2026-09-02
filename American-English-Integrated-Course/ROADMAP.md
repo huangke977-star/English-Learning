@@ -50,6 +50,8 @@ Book1 全册审查记录：`09-Reviews-and-Answers/reviews/book1-final-review.md
 
 ## Book2：听力与自然语流
 
+当前状态：十二个文字单元已完成，并通过逐章审查和全册复审；MP3 音频待制作，下一步进入 Book3。
+
 | 章节 | 主题 | 主要产出 |
 | --- | --- | --- |
 | 02-01 | 意群与句子重音 | 关键词识别练习 |
@@ -64,6 +66,8 @@ Book1 全册审查记录：`09-Reviews-and-Answers/reviews/book1-final-review.md
 | 02-10 | 缩略、融合与自然语速 | 听写和复述材料 |
 | 02-11 | 语调与说话意图 | 陈述、疑问、确认和惊讶 |
 | 02-12 | 精听、泛听和听力测试 | 综合听力任务 |
+
+Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md`。音频脚本与资源状态见 `assets/02-audio-manifest.md`。
 
 ## Book3：实用语法与句子构造
 
