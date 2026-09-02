@@ -166,6 +166,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book8：真实场景综合任务
 
+当前状态：**已完成**。十个场景单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book8-final-review.md`。下一步进入 Book9 复习、测试与答案。
+
 | 章节 | 场景 | 综合任务 |
 | --- | --- | --- |
 | 08-01 | 餐厅 | 听菜单说明、点餐、确认订单 |
