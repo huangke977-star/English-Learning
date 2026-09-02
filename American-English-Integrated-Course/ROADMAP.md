@@ -71,6 +71,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book3：实用语法与句子构造
 
+当前状态：**已完成**。十二个单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book3-final-review.md`。下一步进入 Phase 3 的 Book4。
+
 | 章节 | 主题 | 主要产出 |
 | --- | --- | --- |
 | 03-01 | 词性与基本句型 | SVC、SVO、SVOO 等 |
