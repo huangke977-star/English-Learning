@@ -90,6 +90,8 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book4：核心词汇、搭配与短语动词
 
+当前状态：**已完成**。十二个单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book4-final-review.md`。下一步进入 Book5 高频口语句型。
+
 | 章节 | 主题 |
 | --- | --- |
 | 04-01 | 人物、家庭和日常生活 |
