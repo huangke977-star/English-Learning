@@ -65,6 +65,14 @@
 - 写作：写 100 词左右的工作或生活说明，使用 4 个短语动词，并在括号中标明哪些可分、哪些不可分。
 - 自检：特别检查代词位置和 `look for/look after`、`deal with` 的介词。
 
+## 配套音频
+
+[B4-09 自然速度 MP3](../assets/audio/complete-course/book4/B4-09-natural-01.mp3)
+
+[B4-09 慢速 MP3](../assets/audio/complete-course/book4/B4-09-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-08 科技、网络和设备；Book3 §03-09 代词和介词
@@ -76,3 +84,4 @@
 - PDF 参考页码：整套教材 v1.0，第 118 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-09-review.md`
+

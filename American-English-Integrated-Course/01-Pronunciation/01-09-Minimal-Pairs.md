@@ -63,6 +63,14 @@ I can hear the difference between ______ and ______.
 
 达标线：随机听辨至少 8/10 正确，且录音中的两个词不会因词尾或元音缺失而无法区分。
 
+## 配套音频
+
+[B1-09 自然速度 MP3](../assets/audio/complete-course/book1/B1-09-natural-01.mp3)
+
+[B1-09 慢速 MP3](../assets/audio/complete-course/book1/B1-09-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-02 至 §01-08 中对应音素
@@ -74,3 +82,4 @@ I can hear the difference between ______ and ______.
 - PDF 参考页码：整套教材 v1.0，第 47 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-09-review.md`
+

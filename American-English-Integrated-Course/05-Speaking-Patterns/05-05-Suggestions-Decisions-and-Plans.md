@@ -65,6 +65,14 @@ Let's [meet / review it] at [time], then.
 - 写作：写 80-100 词的工作或学习计划，包含目标、两个行动、时间和决定理由。
 - 完成标准：建议不是命令；计划至少包含两个可验证细节。
 
+## 配套音频
+
+[B5-05 自然速度 MP3](../assets/audio/complete-course/book5/B5-05-natural-01.mp3)
+
+[B5-05 慢速 MP3](../assets/audio/complete-course/book5/B5-05-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-04 将来表达；Book4 §04-06 学习、计划和目标
@@ -76,3 +84,4 @@ Let's [meet / review it] at [time], then.
 - PDF 参考页码：整套教材 v1.0，第 134 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-05-review.md`
+

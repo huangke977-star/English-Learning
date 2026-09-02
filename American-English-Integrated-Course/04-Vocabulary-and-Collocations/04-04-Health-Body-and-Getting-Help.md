@@ -67,6 +67,14 @@
 - 写作：写一条 60-80 词的请假或预约消息，语气礼貌、信息完整，不提供不必要的私人细节。
 - 自检：确认症状名词前的冠词、`hurt` 形式及 `for/since` 时间表达。
 
+## 配套音频
+
+[B4-04 自然速度 MP3](../assets/audio/complete-course/book4/B4-04-natural-01.mp3)
+
+[B4-04 慢速 MP3](../assets/audio/complete-course/book4/B4-04-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-05 现在完成时；Book3 §03-07 情态动词与礼貌请求
@@ -78,3 +86,4 @@
 - PDF 参考页码：整套教材 v1.0，第 108 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-04-review.md`
+

@@ -55,6 +55,14 @@
 - 写作迁移：写一段 5-6 轮聊天，安排一次见面，使用一个缩写或非正式表达，但信息必须完整。
 - 自检：标出聊天中的省略和缩写，确认时间、地点、行动三项没有遗漏。
 
+## 配套音频
+
+[B6-02 自然速度 MP3](../assets/audio/complete-course/book6/B6-02-natural-01.mp3)
+
+[B6-02 慢速 MP3](../assets/audio/complete-course/book6/B6-02-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-01 寒暄和结束；Book5 §05-08 在线聊天
@@ -65,3 +73,4 @@
 - PDF 参考页码：整套教材 v1.0，第 152 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-02-review.md`
+

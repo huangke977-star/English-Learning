@@ -219,10 +219,25 @@ def markdown_flowables(path: Path, key: str) -> list[Flowable]:
     result: list[Flowable] = [FileStart(key), paragraph(first_heading(path), STYLES.h1)]
     i = 0
     in_code = False
+    in_audio_section = False
     code_lines: list[str] = []
     while i < len(lines):
         raw = lines[i].rstrip()
         stripped = raw.strip()
+        if stripped.startswith("## 配套音频"):
+            # Audio links remain in Markdown and the audio manifest.  They are
+            # intentionally omitted from the print PDF because ReportLab's
+            # plain-text renderer cannot preserve those links and the section
+            # otherwise creates awkward orphan lines at page bottoms.
+            in_audio_section = True
+            i += 1
+            continue
+        if in_audio_section:
+            if stripped.startswith("## "):
+                in_audio_section = False
+            else:
+                i += 1
+                continue
         if stripped.startswith("```"):
             if in_code:
                 # The code block is already escaped; do not pass it through
@@ -339,7 +354,7 @@ def build_pdf(output_path: Path, files: Iterable[Path], title: str, cover_subtit
         Spacer(1, 10 * mm),
         paragraph(f"版本 v1.0 · 生成日期 {TODAY}", STYLES.small),
         Spacer(1, 25 * mm),
-        paragraph("本 PDF 由项目 Markdown 源文件自动排版生成。正文、例句、练习和答案以仓库中的文字教材为准；PDF 页码仅对本版本有效。", STYLES.quote),
+        paragraph("本 PDF 由项目 Markdown 源文件自动排版生成。正文、例句、练习和答案以仓库中的文字教材为准；PDF 页码仅对本版本有效。全课程配套音频位于 assets/audio/complete-course/，清单见 assets/complete-audio-manifest.md。", STYLES.quote),
         PageBreak(),
     ]
     for index, path in enumerate(files):

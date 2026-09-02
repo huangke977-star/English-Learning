@@ -66,6 +66,14 @@ Could we [move/change/check] [item]?
 - 写作：写 80-100 词的服务跟进消息，说明订单/预订、问题和希望的解决方式。
 - 完成标准：每个场景至少有一个请求、一个确认和一个感谢。
 
+## 配套音频
+
+[B5-10 自然速度 MP3](../assets/audio/complete-course/book5/B5-10-natural-01.mp3)
+
+[B5-10 慢速 MP3](../assets/audio/complete-course/book5/B5-10-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-02 时间地点和移动；Book4 §04-03 食物购物和消费
@@ -77,3 +85,4 @@ Could we [move/change/check] [item]?
 - PDF 参考页码：整套教材 v1.0，第 144 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-10-review.md`
+

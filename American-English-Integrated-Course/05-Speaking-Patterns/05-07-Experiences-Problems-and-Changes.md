@@ -65,6 +65,14 @@ Since then, [change].
 - 写作：写 100-120 词的问题说明，明确影响、已采取措施和下一步请求。
 - 完成标准：时间线清楚；至少使用一个过去时、一个现在完成时和两个结果连接词。
 
+## 配套音频
+
+[B5-07 自然速度 MP3](../assets/audio/complete-course/book5/B5-07-natural-01.mp3)
+
+[B5-07 慢速 MP3](../assets/audio/complete-course/book5/B5-07-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-03 过去时；Book3 §03-05 现在完成时
@@ -76,3 +84,4 @@ Since then, [change].
 - PDF 参考页码：整套教材 v1.0，第 138 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-07-review.md`
+

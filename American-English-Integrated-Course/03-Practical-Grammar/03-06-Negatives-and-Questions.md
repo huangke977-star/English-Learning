@@ -62,6 +62,14 @@ Wh- 问词（`who, what, where, when, why, how`）放在句首，但仍要保留
 
 围绕“今天的工作安排”写 6 个问题和 6 个回答，至少包含一个 be 问句、一个 do/does 问句、一个 did 问句、一个情态问句和一个否定回答；录音完成问答。
 
+## 配套音频
+
+[B3-06 自然速度 MP3](../assets/audio/complete-course/book3/B3-06-natural-01.mp3)
+
+[B3-06 慢速 MP3](../assets/audio/complete-course/book3/B3-06-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-05 现在完成时
@@ -73,3 +81,4 @@ Wh- 问词（`who, what, where, when, why, how`）放在句首，但仍要保留
 - PDF 参考页码：整套教材 v1.0，第 88 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-06-review.md`
+

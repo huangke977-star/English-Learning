@@ -60,6 +60,14 @@
 - 听写稿至少保留一次未经核对的原始版本。
 - 能把错误分成至少两类，而不是只写“没听懂”。
 
+## 配套音频
+
+[B0-04 自然速度 MP3](../assets/audio/complete-course/book0/B0-04-natural-01.mp3)
+
+[B0-04 慢速 MP3](../assets/audio/complete-course/book0/B0-04-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book0 §00-03 每日学习流程
@@ -70,3 +78,4 @@
 - PDF 参考页码：整套教材 v1.0，第 19 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/00-04-review.md`
+

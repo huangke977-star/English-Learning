@@ -55,6 +55,14 @@
 
 录音朗读五个双元音各 3 个词，再读例句 `I might go out tonight.`。回听时检查是否出现两个音节、是否在音节末尾提前停止滑动。
 
+## 配套音频
+
+[B1-05 自然速度 MP3](../assets/audio/complete-course/book1/B1-05-natural-01.mp3)
+
+[B1-05 慢速 MP3](../assets/audio/complete-course/book1/B1-05-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-02 至 §01-04 的单元音
@@ -66,3 +74,4 @@
 - PDF 参考页码：整套教材 v1.0，第 39 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-05-review.md`
+

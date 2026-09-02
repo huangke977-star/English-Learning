@@ -62,6 +62,14 @@
 - 写作：把其中 3 句改成工作邮件表达，说明你替换了哪些词以及语气如何变化。
 - 自检：检查词义限制和搭配，不以“更长、更正式”作为唯一选择标准。
 
+## 配套音频
+
+[B4-10 自然速度 MP3](../assets/audio/complete-course/book4/B4-10-natural-01.mp3)
+
+[B4-10 慢速 MP3](../assets/audio/complete-course/book4/B4-10-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-09 高频短语动词；Book3 §03-07 礼貌请求
@@ -74,3 +82,4 @@
 - PDF 参考页码：整套教材 v1.0，第 120 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-10-review.md`
+

@@ -74,6 +74,14 @@ Would you mind opening the window?
 
 为同一件事写三种请求：熟人之间、普通服务场景、正式工作场景；朗读时调整重音和语调，并写下语体说明。
 
+## 配套音频
+
+[B3-07 自然速度 MP3](../assets/audio/complete-course/book3/B3-07-natural-01.mp3)
+
+[B3-07 慢速 MP3](../assets/audio/complete-course/book3/B3-07-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-06 否定句与疑问句
@@ -85,3 +93,4 @@ Would you mind opening the window?
 - PDF 参考页码：整套教材 v1.0，第 90 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-07-review.md`
+

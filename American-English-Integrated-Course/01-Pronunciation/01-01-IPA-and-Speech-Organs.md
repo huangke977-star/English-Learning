@@ -174,6 +174,14 @@ IPA（International Phonetic Alphabet，国际音标）用一套约定符号表�
 
 完成标准：能正确解释至少四个器官，能读出主要重音符号，并能根据分类表说明至少六个辅音的类别。
 
+## 配套音频
+
+[B1-01 自然速度 MP3](../assets/audio/complete-course/book1/B1-01-natural-01.mp3)
+
+[B1-01 慢速 MP3](../assets/audio/complete-course/book1/B1-01-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book0 §00-05 跟读、复述与录音
@@ -185,3 +193,4 @@ IPA（International Phonetic Alphabet，国际音标）用一套约定符号表�
 - PDF 参考页码：整套教材 v1.0，第 29 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-01-review.md`
+

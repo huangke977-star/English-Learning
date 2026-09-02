@@ -56,6 +56,14 @@ She shares ______.
 
 至少使用两个本单元目标音；不要为了堆音而写不自然的句子。
 
+## 配套音频
+
+[B1-07 自然速度 MP3](../assets/audio/complete-course/book1/B1-07-natural-01.mp3)
+
+[B1-07 慢速 MP3](../assets/audio/complete-course/book1/B1-07-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-06 清浊辅音与送气
@@ -67,3 +75,4 @@ She shares ______.
 - PDF 参考页码：整套教材 v1.0，第 43 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-07-review.md`
+

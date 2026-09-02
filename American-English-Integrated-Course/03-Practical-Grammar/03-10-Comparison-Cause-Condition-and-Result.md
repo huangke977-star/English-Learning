@@ -62,6 +62,14 @@
 
 比较两种学习方式或两条通勤路线，写 8 句左右，至少包含一个比较级、一个最高级、一个 `because` 原因句、一个 `if` 条件句和一个结果句。最后用一句话说明你的选择。
 
+## 配套音频
+
+[B3-10 自然速度 MP3](../assets/audio/complete-course/book3/B3-10-natural-01.mp3)
+
+[B3-10 慢速 MP3](../assets/audio/complete-course/book3/B3-10-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-09 代词、介词和连词
@@ -74,3 +82,4 @@
 - PDF 参考页码：整套教材 v1.0，第 96 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-10-review.md`
+

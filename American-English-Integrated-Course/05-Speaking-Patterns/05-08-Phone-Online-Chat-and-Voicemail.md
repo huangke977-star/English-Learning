@@ -62,6 +62,14 @@
 - 写作：把语音留言改写成 60-80 词的在线聊天消息，保留身份、目的、行动和时间。
 - 完成标准：姓名、目的、行动和联系方式四项齐全；数字和日期无歧义。
 
+## 配套音频
+
+[B5-08 自然速度 MP3](../assets/audio/complete-course/book5/B5-08-natural-01.mp3)
+
+[B5-08 慢速 MP3](../assets/audio/complete-course/book5/B5-08-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-04 澄清、确认和纠正；Book4 §04-02 时间、地点和移动
@@ -73,3 +81,4 @@
 - PDF 参考页码：整套教材 v1.0，第 140 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-08-review.md`
+

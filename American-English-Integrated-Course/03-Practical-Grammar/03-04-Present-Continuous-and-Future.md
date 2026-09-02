@@ -70,6 +70,14 @@
 
 写一份本周计划，至少包含正在进行的阶段、一个临时决定、一个既定安排和一个预测；朗读并录音。
 
+## 配套音频
+
+[B3-04 自然速度 MP3](../assets/audio/complete-course/book3/B3-04-natural-01.mp3)
+
+[B3-04 慢速 MP3](../assets/audio/complete-course/book3/B3-04-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-03 一般过去时与过去进行时
@@ -81,3 +89,4 @@
 - PDF 参考页码：整套教材 v1.0，第 84 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-04-review.md`
+

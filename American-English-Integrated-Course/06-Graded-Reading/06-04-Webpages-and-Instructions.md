@@ -56,6 +56,14 @@
 - 写作迁移：写一份 80-100 词的“如何提交学习作业”说明，包含至少 4 步和一个条件。
 - 自检：每一步使用明确动词；区分 `at least`、`after`、`if` 和安全提醒。
 
+## 配套音频
+
+[B6-04 自然速度 MP3](../assets/audio/complete-course/book6/B6-04-natural-01.mp3)
+
+[B6-04 慢速 MP3](../assets/audio/complete-course/book6/B6-04-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-10 条件和结果；Book4 §04-08 科技、网络和设备
@@ -66,3 +74,4 @@
 - PDF 参考页码：整套教材 v1.0，第 156 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-04-review.md`
+

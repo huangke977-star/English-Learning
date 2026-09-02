@@ -74,6 +74,14 @@ information /ˌɪnfɚˈmeɪʃən/
 
 选择两个具有重音变化的词，分别写一个名词/形容词句和一个动词句，标出 IPA 中的 `ˈ`，再录音对比。不要只提高音量，要同时调整元音清晰度和节奏。
 
+## 配套音频
+
+[B1-10 自然速度 MP3](../assets/audio/complete-course/book1/B1-10-natural-01.mp3)
+
+[B1-10 慢速 MP3](../assets/audio/complete-course/book1/B1-10-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-09 最小对立对
@@ -85,3 +93,4 @@ information /ˌɪnfɚˈmeɪʃən/
 - PDF 参考页码：整套教材 v1.0，第 49 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-10-review.md`
+

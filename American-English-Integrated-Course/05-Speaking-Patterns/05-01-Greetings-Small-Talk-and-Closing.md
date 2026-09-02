@@ -65,6 +65,14 @@ I should let you go. [Take care / Talk to you later].
 - 写作：写一条 40-60 词的重联消息，包含问候、近况和下一步联系。
 - 完成标准：能使用 4 个句型，不逐句翻译，不把寒暄回答扩展成无关长篇。
 
+## 配套音频
+
+[B5-01 自然速度 MP3](../assets/audio/complete-course/book5/B5-01-natural-01.mp3)
+
+[B5-01 慢速 MP3](../assets/audio/complete-course/book5/B5-01-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-01 人物、家庭和日常生活
@@ -76,3 +84,4 @@ I should let you go. [Take care / Talk to you later].
 - PDF 参考页码：整套教材 v1.0，第 126 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-01-review.md`
+

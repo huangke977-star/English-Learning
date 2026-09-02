@@ -50,6 +50,14 @@
 - 写作迁移：写 100-120 词的一次个人经历，包含一个困难、一个决定和现在的变化。
 - 自检：检查一般过去时、过去完成时和现在完成时的时间关系，不把所有动词都写成过去式。
 
+## 配套音频
+
+[B6-07 自然速度 MP3](../assets/audio/complete-course/book6/B6-07-natural-01.mp3)
+
+[B6-07 慢速 MP3](../assets/audio/complete-course/book6/B6-07-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-03 过去时；Book3 §03-05 现在完成时
@@ -60,3 +68,4 @@
 - PDF 参考页码：整套教材 v1.0，第 162 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-07-review.md`
+

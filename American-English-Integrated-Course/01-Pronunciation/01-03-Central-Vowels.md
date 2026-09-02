@@ -65,6 +65,14 @@ My teacher likes ______.
 
 录音朗读 `cup, about, bird, teacher`，再用每个词造一个真实句子。回听时检查：重读元音是否清楚，弱读音节是否被错误地读得过重，r 色彩是否持续到元音结束。
 
+## 配套音频
+
+[B1-03 自然速度 MP3](../assets/audio/complete-course/book1/B1-03-natural-01.mp3)
+
+[B1-03 慢速 MP3](../assets/audio/complete-course/book1/B1-03-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-02 前元音
@@ -76,3 +84,4 @@ My teacher likes ______.
 - PDF 参考页码：整套教材 v1.0，第 35 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-03-review.md`
+

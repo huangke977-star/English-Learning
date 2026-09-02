@@ -67,6 +67,14 @@
 - 写作：写一封 80-100 词的退款或换货消息，写明商品、问题、购买时间和你希望的解决方式。
 - 自检：检查数量词、`cost` 问句、`afford to` 和礼貌请求。
 
+## 配套音频
+
+[B4-03 自然速度 MP3](../assets/audio/complete-course/book4/B4-03-natural-01.mp3)
+
+[B4-03 慢速 MP3](../assets/audio/complete-course/book4/B4-03-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-08 名词、冠词和数量；Book3 §03-07 情态动词与礼貌请求
@@ -78,3 +86,4 @@
 - PDF 参考页码：整套教材 v1.0，第 106 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-03-review.md`
+

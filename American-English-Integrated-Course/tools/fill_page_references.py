@@ -6,7 +6,7 @@ import re
 
 COURSE_DIR = Path(__file__).resolve().parents[1]
 INDEX = COURSE_DIR / "indexes" / "page-index.md"
-PLACEHOLDER = "PDF 参考页码：发布后填写。"
+PAGE_REFERENCE = re.compile(r"PDF 参考页码：(?:发布后填写。|整套教材 v1\.0，第 \d+ 页。)")
 
 
 def main() -> None:
@@ -22,13 +22,13 @@ def main() -> None:
             continue
         for path in sorted(directory.glob("*.md")):
             text = path.read_text(encoding="utf-8")
-            if PLACEHOLDER not in text:
+            if not PAGE_REFERENCE.search(text):
                 continue
             key = path.relative_to(COURSE_DIR).as_posix()
             page = page_map.get(key)
             if page is None:
                 raise SystemExit(f"No page-index entry for {key}")
-            updated = text.replace(PLACEHOLDER, f"PDF 参考页码：整套教材 v1.0，第 {page} 页。")
+            updated = PAGE_REFERENCE.sub(f"PDF 参考页码：整套教材 v1.0，第 {page} 页。", text)
             path.write_text(updated, encoding="utf-8")
             changed += 1
     print(f"Updated {changed} source files")

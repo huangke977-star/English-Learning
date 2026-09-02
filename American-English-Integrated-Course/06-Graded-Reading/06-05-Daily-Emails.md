@@ -55,6 +55,14 @@
 - 写作迁移：写 80-100 词的学习小组邮件，包含活动顺序、材料和一个条件安排。
 - 自检：圈出主题、请求、截止时间和条件句，确认每项行动有对象。
 
+## 配套音频
+
+[B6-05 自然速度 MP3](../assets/audio/complete-course/book6/B6-05-natural-01.mp3)
+
+[B6-05 慢速 MP3](../assets/audio/complete-course/book6/B6-05-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-05 建议、决定和计划；Book4 §04-06 学习和目标
@@ -65,3 +73,4 @@
 - PDF 参考页码：整套教材 v1.0，第 158 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-05-review.md`
+

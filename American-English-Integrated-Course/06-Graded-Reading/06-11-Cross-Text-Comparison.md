@@ -60,6 +60,14 @@
 - 写作迁移：写 140-170 词的比较短文，包含一个共同点、两个差异、一个证据和结论。
 - 自检：每个结论都能指回某份材料；区分“材料说了什么”和“我推断什么”。
 
+## 配套音频
+
+[B6-11 自然速度 MP3](../assets/audio/complete-course/book6/B6-11-natural-01.mp3)
+
+[B6-11 慢速 MP3](../assets/audio/complete-course/book6/B6-11-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-10 比较、原因和结果；Book5 §05-06 观点表达
@@ -70,3 +78,4 @@
 - PDF 参考页码：整套教材 v1.0，第 170 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-11-review.md`
+

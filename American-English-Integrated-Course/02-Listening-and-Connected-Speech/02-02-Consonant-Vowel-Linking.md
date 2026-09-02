@@ -67,9 +67,9 @@ need a break   /nid ə breɪk/   -> /ni də breɪk/
 
 ## 配套音频
 
-[B2-02 自然速度 MP3](../assets/audio/book2/B2-02-natural-01.mp3)
+[B2-02 自然速度 MP3](../assets/audio/complete-course/book2/B2-02-natural-01.mp3)
 
-[B2-02 慢速 MP3](../assets/audio/book2/B2-02-slow-01.mp3)
+[B2-02 慢速 MP3](../assets/audio/complete-course/book2/B2-02-slow-01.mp3)
 
 > 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨训练。
 
@@ -84,3 +84,4 @@ need a break   /nid ə breɪk/   -> /ni də breɪk/
 - PDF 参考页码：整套教材 v1.0，第 53 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/02-02-review.md`
+

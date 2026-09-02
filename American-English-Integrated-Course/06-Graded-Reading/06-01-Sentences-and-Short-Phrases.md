@@ -58,6 +58,14 @@
 - 写作迁移：仿写 4 句个人安排，至少使用 `because`、`but`、`after` 中的两个。
 - 完成标准：每句先找主干，再准确定位至少一项细节。
 
+## 配套音频
+
+[B6-01 自然速度 MP3](../assets/audio/complete-course/book6/B6-01-natural-01.mp3)
+
+[B6-01 慢速 MP3](../assets/audio/complete-course/book6/B6-01-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-01 基本句型；Book4 §04-02 时间、地点和移动
@@ -68,3 +76,4 @@
 - PDF 参考页码：整套教材 v1.0，第 150 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-01-review.md`
+

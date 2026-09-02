@@ -67,6 +67,14 @@ While I was cooking, he called.
 
 用 8-10 句描述一次过去经历，至少使用 4 个一般过去时句子、2 个过去进行时句子和 2 个 `when/while` 连接句。
 
+## 配套音频
+
+[B3-03 自然速度 MP3](../assets/audio/complete-course/book3/B3-03-natural-01.mp3)
+
+[B3-03 慢速 MP3](../assets/audio/complete-course/book3/B3-03-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-02 be 动词与一般现在时
@@ -78,3 +86,4 @@ While I was cooking, he called.
 - PDF 参考页码：整套教材 v1.0，第 82 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-03-review.md`
+

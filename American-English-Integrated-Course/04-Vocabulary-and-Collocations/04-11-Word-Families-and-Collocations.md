@@ -60,6 +60,14 @@
 - 写作：写 100-120 词的短说明，标出 8 个词族成员及其句子功能（名词、动词、形容词或副词）。
 - 自检：检查词形、介词搭配、可数性和重音；不确定的词查词典例句。
 
+## 配套音频
+
+[B4-11 自然速度 MP3](../assets/audio/complete-course/book4/B4-11-natural-01.mp3)
+
+[B4-11 慢速 MP3](../assets/audio/complete-course/book4/B4-11-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-10 同义词、近义词和正式程度；Book3 §03-09 介词
@@ -72,3 +80,4 @@
 - PDF 参考页码：整套教材 v1.0，第 122 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-11-review.md`
+

@@ -56,6 +56,14 @@
 
 用 `We really...` 开头说三句自己的信息；至少包含一个 `/ŋ/` 词、一个 `/ɹ/` 词和一个 `/l/` 词。回听时分别记录舌尖位置和词尾是否清楚。
 
+## 配套音频
+
+[B1-08 自然速度 MP3](../assets/audio/complete-course/book1/B1-08-natural-01.mp3)
+
+[B1-08 慢速 MP3](../assets/audio/complete-course/book1/B1-08-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-07 摩擦音与塞擦音
@@ -67,3 +75,4 @@
 - PDF 参考页码：整套教材 v1.0，第 45 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-08-review.md`
+

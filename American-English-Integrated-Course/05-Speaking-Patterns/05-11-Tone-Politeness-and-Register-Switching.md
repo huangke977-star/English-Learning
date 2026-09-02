@@ -58,6 +58,14 @@
 - 写作：写一条日常聊天消息和一封正式邮件，表达同一件事；比较词汇、句式和结尾。
 - 完成标准：三种版本信息一致，但直接度、缓冲语和结束方式符合场景。
 
+## 配套音频
+
+[B5-11 自然速度 MP3](../assets/audio/complete-course/book5/B5-11-natural-01.mp3)
+
+[B5-11 慢速 MP3](../assets/audio/complete-course/book5/B5-11-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-02 请求与回应；Book5 §05-03 拒绝和折中
@@ -69,3 +77,4 @@
 - PDF 参考页码：整套教材 v1.0，第 146 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-11-review.md`
+

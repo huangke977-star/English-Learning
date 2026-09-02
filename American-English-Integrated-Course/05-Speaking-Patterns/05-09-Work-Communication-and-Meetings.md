@@ -66,6 +66,14 @@ Let's recap: [person] will [action] by [date].
 - 写作：写 100-120 词的会后消息，列出决定、负责人和截止时间。
 - 完成标准：至少使用 5 个会议句型；每个行动项都有动作和责任人。
 
+## 配套音频
+
+[B5-09 自然速度 MP3](../assets/audio/complete-course/book5/B5-09-natural-01.mp3)
+
+[B5-09 慢速 MP3](../assets/audio/complete-course/book5/B5-09-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-05 工作、任务和会议；Book5 §05-04 澄清和确认
@@ -77,3 +85,4 @@ Let's recap: [person] will [action] by [date].
 - PDF 参考页码：整套教材 v1.0，第 142 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-09-review.md`
+

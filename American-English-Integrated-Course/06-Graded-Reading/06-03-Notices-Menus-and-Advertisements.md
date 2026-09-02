@@ -65,6 +65,14 @@
 - 写作迁移：仿写一则 60-80 词的楼宇或课程通知，包含日期、时间、影响和联系方式。
 - 自检：圈出数字、`only/no/final` 等限制词，避免漏读条件。
 
+## 配套音频
+
+[B6-03 自然速度 MP3](../assets/audio/complete-course/book6/B6-03-natural-01.mp3)
+
+[B6-03 慢速 MP3](../assets/audio/complete-course/book6/B6-03-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book4 §04-03 食物购物和消费；Book4 §04-02 时间地点
@@ -75,3 +83,4 @@
 - PDF 参考页码：整套教材 v1.0，第 154 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-03-review.md`
+

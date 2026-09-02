@@ -64,6 +64,14 @@
 
 写 8 句个人经历和持续状态，至少使用 `ever`、`already`、`yet`、`for`、`since` 中的四项；另写两句包含明确过去时间的一般过去时句子，说明区别。
 
+## 配套音频
+
+[B3-05 自然速度 MP3](../assets/audio/complete-course/book3/B3-05-natural-01.mp3)
+
+[B3-05 慢速 MP3](../assets/audio/complete-course/book3/B3-05-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-04 现在进行时与将来表达
@@ -75,3 +83,4 @@
 - PDF 参考页码：整套教材 v1.0，第 86 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-05-review.md`
+

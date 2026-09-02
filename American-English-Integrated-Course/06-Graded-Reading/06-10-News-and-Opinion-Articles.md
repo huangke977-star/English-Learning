@@ -53,6 +53,14 @@
 - 写作迁移：写 130-160 词的短观点文，先陈述一个公共问题，再给出立场、证据和一个让步。
 - 自检：给事实、引语和观点分别做标记，不把 `according to` 后的信息当作作者亲自证实的事实。
 
+## 配套音频
+
+[B6-10 自然速度 MP3](../assets/audio/complete-course/book6/B6-10-natural-01.mp3)
+
+[B6-10 慢速 MP3](../assets/audio/complete-course/book6/B6-10-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-06 观点和不确定性；Book4 §04-10 正式程度
@@ -63,3 +71,4 @@
 - PDF 参考页码：整套教材 v1.0，第 168 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-10-review.md`
+

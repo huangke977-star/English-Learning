@@ -66,6 +66,14 @@ spin [spɪn]    stop [stɑp]    ski [ski]
 
 录音朗读六个词和三条例句。手掌放在嘴前感受气流，但不要为了制造大风而夸张发音；目标是清楚的阻塞、释放和声带控制。
 
+## 配套音频
+
+[B1-06 自然速度 MP3](../assets/audio/complete-course/book1/B1-06-natural-01.mp3)
+
+[B1-06 慢速 MP3](../assets/audio/complete-course/book1/B1-06-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-05 双元音
@@ -77,3 +85,4 @@ spin [spɪn]    stop [stɑp]    ski [ski]
 - PDF 参考页码：整套教材 v1.0，第 41 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-06-review.md`
+

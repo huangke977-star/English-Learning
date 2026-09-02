@@ -63,6 +63,14 @@ A 想周一开会，B 只能周三。用 `meet halfway` 提出方案。
 - 写作：写 80-100 词的方案回复，先认可对方，再说明限制并提出替代方案。
 - 完成标准：拒绝不攻击人；折中方案包含明确的时间、对象或行动。
 
+## 配套音频
+
+[B5-03 自然速度 MP3](../assets/audio/complete-course/book5/B5-03-natural-01.mp3)
+
+[B5-03 慢速 MP3](../assets/audio/complete-course/book5/B5-03-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-02 请求、回应和礼貌表达；Book3 §03-10 条件和结果
@@ -74,3 +82,4 @@ A 想周一开会，B 只能周三。用 `meet halfway` 提出方案。
 - PDF 参考页码：整套教材 v1.0，第 130 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-03-review.md`
+

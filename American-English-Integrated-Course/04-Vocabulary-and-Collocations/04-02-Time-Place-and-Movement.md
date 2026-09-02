@@ -69,6 +69,14 @@
 - 写作：给朋友写一条 50-70 词的消息，说明你会迟到、原因、预计到达时间和替代安排。
 - 自检：检查 `arrive at/in`、`leave for` 和可分短语动词中的代词位置。
 
+## 配套音频
+
+[B4-02 自然速度 MP3](../assets/audio/complete-course/book4/B4-02-natural-01.mp3)
+
+[B4-02 慢速 MP3](../assets/audio/complete-course/book4/B4-02-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-09 代词、介词和连词
@@ -80,3 +88,4 @@
 - PDF 参考页码：整套教材 v1.0，第 104 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-02-review.md`
+

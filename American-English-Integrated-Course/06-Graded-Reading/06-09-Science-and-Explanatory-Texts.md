@@ -52,6 +52,14 @@
 - 写作迁移：写 120-150 词的学习方法说明，包含一个主张、两个理由和一个限制条件。
 - 自检：每个观点是否有原文证据；区分 `effect`（影响）和 `affect`（动词，影响）。
 
+## 配套音频
+
+[B6-09 自然速度 MP3](../assets/audio/complete-course/book6/B6-09-natural-01.mp3)
+
+[B6-09 慢速 MP3](../assets/audio/complete-course/book6/B6-09-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-10 原因、条件和结果；Book4 §04-06 学习和目标
@@ -62,3 +70,4 @@
 - PDF 参考页码：整套教材 v1.0，第 166 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-09-review.md`
+

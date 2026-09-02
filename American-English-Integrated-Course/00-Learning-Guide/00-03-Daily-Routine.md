@@ -72,6 +72,14 @@
 - 至少有一次主动回忆，而不是一直看答案。
 - 记录一个已掌握点和一个待复习点。
 
+## 配套音频
+
+[B0-03 自然速度 MP3](../assets/audio/complete-course/book0/B0-03-natural-01.mp3)
+
+[B0-03 慢速 MP3](../assets/audio/complete-course/book0/B0-03-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book0 §00-02 五项能力自测
@@ -82,3 +90,4 @@
 - PDF 参考页码：整套教材 v1.0，第 17 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/00-03-review.md`
+

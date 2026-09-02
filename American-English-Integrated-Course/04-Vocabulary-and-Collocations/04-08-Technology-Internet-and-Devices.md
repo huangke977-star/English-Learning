@@ -67,6 +67,14 @@
 - 写作：写一条 80-100 词的技术支持工单，不写真实密码，提出一个明确请求。
 - 自检：检查 `log in to`、`access`、`upload/download` 和问题描述顺序。
 
+## 配套音频
+
+[B4-08 自然速度 MP3](../assets/audio/complete-course/book4/B4-08-natural-01.mp3)
+
+[B4-08 慢速 MP3](../assets/audio/complete-course/book4/B4-08-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-06 否定句与疑问句；Book3 §03-12 被动语态
@@ -79,3 +87,4 @@
 - PDF 参考页码：整套教材 v1.0，第 116 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-08-review.md`
+

@@ -57,3 +57,13 @@
 - PDF 参考页码：整套教材 v1.0，第 196 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/07-12-review.md`
+
+## 配套音频
+
+[B7-12 自然速度 MP3](../assets/audio/complete-course/book7/B7-12-natural-01.mp3)
+
+[B7-12 慢速 MP3](../assets/audio/complete-course/book7/B7-12-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
+

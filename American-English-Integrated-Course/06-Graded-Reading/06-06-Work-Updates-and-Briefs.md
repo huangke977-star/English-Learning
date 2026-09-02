@@ -53,6 +53,14 @@
 - 写作迁移：写 100-120 词的项目更新，至少包含一个被动句、一个条件句和一个截止时间。
 - 自检：所有日期、责任人和条件是否对应原文；不要把 `may change` 改成确定事实。
 
+## 配套音频
+
+[B6-06 自然速度 MP3](../assets/audio/complete-course/book6/B6-06-natural-01.mp3)
+
+[B6-06 慢速 MP3](../assets/audio/complete-course/book6/B6-06-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-12 被动语态；Book4 §04-05 工作任务和会议
@@ -63,3 +71,4 @@
 - PDF 参考页码：整套教材 v1.0，第 160 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-06-review.md`
+

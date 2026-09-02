@@ -67,6 +67,14 @@
 - 写作：写 80-100 词的社交消息，表达感谢、描述情绪、提出一次邀请或设置一个合理边界。
 - 自检：检查 `-ed/-ing`、`grateful for/to` 和邀请、拒绝的语气。
 
+## 配套音频
+
+[B4-07 自然速度 MP3](../assets/audio/complete-course/book4/B4-07-natural-01.mp3)
+
+[B4-07 慢速 MP3](../assets/audio/complete-course/book4/B4-07-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-07 情态动词与礼貌请求；Book3 §03-10 原因和结果
@@ -79,3 +87,4 @@
 - PDF 参考页码：整套教材 v1.0，第 114 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-07-review.md`
+

@@ -64,6 +64,14 @@ I meant [X], not [Y].
 - 写作：写一条 60-80 词的会后确认消息，列出已确认的时间、地点、责任人和下一步。
 - 完成标准：至少使用 4 个修复句型，确认信息无遗漏，语气不带指责。
 
+## 配套音频
+
+[B5-04 自然速度 MP3](../assets/audio/complete-course/book5/B5-04-natural-01.mp3)
+
+[B5-04 慢速 MP3](../assets/audio/complete-course/book5/B5-04-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-06 否定句与疑问句；Book5 §05-03 同意、拒绝和折中
@@ -75,3 +83,4 @@ I meant [X], not [Y].
 - PDF 参考页码：整套教材 v1.0，第 132 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-04-review.md`
+

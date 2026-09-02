@@ -68,6 +68,14 @@
 - 写作：写 70-90 词的“我的一天”，包含一个家务、一个照顾行为和一个人与人相处的细节。
 - 自检：圈出所有动词，确认 `do/make`、`take care of` 和 `get along with` 搭配正确。
 
+## 配套音频
+
+[B4-01 自然速度 MP3](../assets/audio/complete-course/book4/B4-01-natural-01.mp3)
+
+[B4-01 慢速 MP3](../assets/audio/complete-course/book4/B4-01-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-02 be 动词与一般现在时；Book3 §03-08 名词、冠词和数量
@@ -79,3 +87,4 @@
 - PDF 参考页码：整套教材 v1.0，第 102 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-01-review.md`
+

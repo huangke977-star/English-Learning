@@ -63,6 +63,14 @@
 
 描述你的书桌或房间，至少使用 3 个可数单数、2 个复数、2 个不可数名词、`a/an`、`the` 和零冠词；写完后朗读检查冠词。
 
+## 配套音频
+
+[B3-08 自然速度 MP3](../assets/audio/complete-course/book3/B3-08-natural-01.mp3)
+
+[B3-08 慢速 MP3](../assets/audio/complete-course/book3/B3-08-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-07 情态动词与礼貌请求
@@ -74,3 +82,4 @@
 - PDF 参考页码：整套教材 v1.0，第 92 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-08-review.md`
+

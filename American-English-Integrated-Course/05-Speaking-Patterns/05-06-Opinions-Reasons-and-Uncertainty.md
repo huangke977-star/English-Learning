@@ -64,6 +64,14 @@ For these reasons, I recommend [option].
 - 写作：写 100-120 词的建议短文，给出观点、两个理由、一个限制和结论。
 - 完成标准：至少使用 4 个观点/逻辑句型，区分事实与判断。
 
+## 配套音频
+
+[B5-06 自然速度 MP3](../assets/audio/complete-course/book5/B5-06-natural-01.mp3)
+
+[B5-06 慢速 MP3](../assets/audio/complete-course/book5/B5-06-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book5 §05-03 同意、拒绝和折中；Book4 §04-10 同义词和正式程度
@@ -75,3 +83,4 @@ For these reasons, I recommend [option].
 - PDF 参考页码：整套教材 v1.0，第 136 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-06-review.md`
+

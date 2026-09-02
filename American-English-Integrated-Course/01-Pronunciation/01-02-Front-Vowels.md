@@ -74,6 +74,14 @@ I ______ more time.
 
 录音朗读四组最小对立对，再读四个例句。回听后分别记录：舌位问题、嘴型问题、词尾辅音问题各一个。
 
+## 配套音频
+
+[B1-02 自然速度 MP3](../assets/audio/complete-course/book1/B1-02-natural-01.mp3)
+
+[B1-02 慢速 MP3](../assets/audio/complete-course/book1/B1-02-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-01 IPA 与发音器官
@@ -85,3 +93,4 @@ I ______ more time.
 - PDF 参考页码：整套教材 v1.0，第 33 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-02-review.md`
+

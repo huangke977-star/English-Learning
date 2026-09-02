@@ -95,6 +95,14 @@ We can talk about it tomorrow.
 
 总分不代表英语等级。最低分项目作为前四周的主线，其他项目保持低强度复习。
 
+## 配套音频
+
+[B0-02 自然速度 MP3](../assets/audio/complete-course/book0/B0-02-natural-01.mp3)
+
+[B0-02 慢速 MP3](../assets/audio/complete-course/book0/B0-02-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book0 §00-01 如何使用本教材
@@ -105,3 +113,4 @@ We can talk about it tomorrow.
 - PDF 参考页码：整套教材 v1.0，第 15 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/00-02-review.md`
+

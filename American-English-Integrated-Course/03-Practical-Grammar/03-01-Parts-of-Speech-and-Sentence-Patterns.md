@@ -67,6 +67,14 @@
 
 写并录音六句，分别覆盖 SV、SVC、SVA、SVO、SVOO、SVOC。每句写出句型标签，不要为了覆盖句型而写不自然的句子。
 
+## 配套音频
+
+[B3-01 自然速度 MP3](../assets/audio/complete-course/book3/B3-01-natural-01.mp3)
+
+[B3-01 慢速 MP3](../assets/audio/complete-course/book3/B3-01-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book0 §00-01 如何使用本教材
@@ -77,3 +85,4 @@
 - PDF 参考页码：整套教材 v1.0，第 78 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-01-review.md`
+

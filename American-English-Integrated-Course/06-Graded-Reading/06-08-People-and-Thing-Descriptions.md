@@ -51,6 +51,14 @@
 - 写作迁移：写 100-120 词的人物或学习空间描述，至少使用两个空间介词和一个因果连接词。
 - 自检：细节是否支持总体评价；避免只堆形容词而没有证据。
 
+## 配套音频
+
+[B6-08 自然速度 MP3](../assets/audio/complete-course/book6/B6-08-natural-01.mp3)
+
+[B6-08 慢速 MP3](../assets/audio/complete-course/book6/B6-08-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-09 介词和连词；Book4 §04-07 情绪和关系
@@ -61,3 +69,4 @@
 - PDF 参考页码：整套教材 v1.0，第 164 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/06-08-review.md`
+

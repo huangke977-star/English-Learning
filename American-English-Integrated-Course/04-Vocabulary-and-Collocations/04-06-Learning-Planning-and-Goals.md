@@ -67,6 +67,14 @@
 - 写作：写一段 90-110 词的学习计划，说明目标、策略、复习日期和如何衡量进步。
 - 自检：检查 `want to`、`practice + -ing`、`give up + -ing` 和每个目标是否可衡量。
 
+## 配套音频
+
+[B4-06 自然速度 MP3](../assets/audio/complete-course/book4/B4-06-natural-01.mp3)
+
+[B4-06 慢速 MP3](../assets/audio/complete-course/book4/B4-06-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book0 §00-03 每日学习流程；Book0 §00-08 间隔复习与阶段测试
@@ -79,3 +87,4 @@
 - PDF 参考页码：整套教材 v1.0，第 112 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/04-06-review.md`
+

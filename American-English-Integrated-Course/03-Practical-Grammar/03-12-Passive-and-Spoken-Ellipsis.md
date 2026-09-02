@@ -60,6 +60,14 @@
 
 选择“包裹配送、维修工单或活动安排”之一，先写一段 100 词左右的正式通知（至少 4 个被动句），再把其中 3 句改写成对同事说的自然口语。标注哪些成分被省略，以及省略后为什么仍然清楚。
 
+## 配套音频
+
+[B3-12 自然速度 MP3](../assets/audio/complete-course/book3/B3-12-natural-01.mp3)
+
+[B3-12 慢速 MP3](../assets/audio/complete-course/book3/B3-12-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book3 §03-11 定语从句和间接表达
@@ -72,3 +80,4 @@
 - PDF 参考页码：整套教材 v1.0，第 100 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-12-review.md`
+

@@ -58,6 +58,14 @@
 
 录音朗读 `food-foot`、`fool-full`，再读三条例句。回听时检查 `/u/` 是否过度变成中文“乌”，以及 `/ʊ/` 是否被读得过紧。
 
+## 配套音频
+
+[B1-04 自然速度 MP3](../assets/audio/complete-course/book1/B1-04-natural-01.mp3)
+
+[B1-04 慢速 MP3](../assets/audio/complete-course/book1/B1-04-slow-01.mp3)
+
+> 音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。
+
 ## 学习导航
 
 - 先复习：Book1 §01-03 中元音与 r 色彩元音
@@ -69,3 +77,4 @@
 - PDF 参考页码：整套教材 v1.0，第 37 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-04-review.md`
+
