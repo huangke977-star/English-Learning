@@ -71,6 +71,6 @@ I can hear the difference between ______ and ______.
 - 输出辅助：Book5 §05-04 澄清、确认和纠正
 - 输出任务：完成三组最小对立对的听辨和录音。
 - 复习安排：当天、3 天后、7 天后各测一次。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 47 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-09-review.md`

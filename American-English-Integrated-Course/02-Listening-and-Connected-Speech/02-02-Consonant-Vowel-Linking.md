@@ -81,6 +81,6 @@ need a break   /nid ə breɪk/   -> /ni də breɪk/
 - 口语辅助：Book5 §05-02 请求、回应和礼貌表达
 - 输出任务：完成至少 10 句连读录音。
 - 复习安排：当天练习，3 天后听写，7 天后在新句中找连读。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 53 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/02-02-review.md`

@@ -74,6 +74,6 @@ Could we [move/change/check] [item]?
 - 阅读辅助：Book6 §06-03 通知、菜单和广告
 - 写作辅助：Book7 §07-06 正式邮件
 - 复习安排：当天跟读服务请求，3 天后角色扮演，7 天后把口语请求改成书面消息。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 144 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-10-review.md`

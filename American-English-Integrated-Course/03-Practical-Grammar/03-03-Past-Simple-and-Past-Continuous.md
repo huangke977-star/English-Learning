@@ -75,6 +75,6 @@ While I was cooking, he called.
 - 阅读辅助：Book6 §06-07 个人经历叙事
 - 输出任务：完成过去经历叙述和录音。
 - 复习安排：当天检查 `did + 原形`，3 天后口头复述，7 天后改写时间线。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 82 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-03-review.md`

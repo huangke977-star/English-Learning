@@ -82,6 +82,6 @@ Would you mind opening the window?
 - 口语辅助：Book5 §05-02 请求、回应和礼貌表达
 - 输出任务：完成同一请求的三种语体版本。
 - 复习安排：当天改错，3 天后角色扮演，7 天后在工作邮件中检查语气。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 90 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-07-review.md`

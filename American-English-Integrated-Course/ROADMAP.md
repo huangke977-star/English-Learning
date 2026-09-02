@@ -183,7 +183,7 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Book9：复习、测试与答案
 
-当前状态：**已完成**。十个复习、测试和维护单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book9-final-review.md`。文字教材和 Book2 的 33 条音频到此完成，后续制作 PDF 和页码索引时需按版本重新验证。
+当前状态：**已完成**。十个复习和测试单元均已完成初稿、内容审查、修改（如有）和复审；全册记录见 `09-Reviews-and-Answers/reviews/book9-final-review.md`。文字教材和 Book2 的 33 条音频已完成；Phase 6 发布包 v1.0 也已完成 PDF 排版、页码索引和渲染复核，整套 PDF 当前为 227 页。
 
 | 章节 | 内容 |
 | --- | --- |
@@ -197,6 +197,10 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 | 09-08 | 写作任务与评分表 |
 | 09-09 | 听说读写综合测试 |
 | 09-10 | 易错点、索引和版本记录 |
+
+## Phase 6 发布包 v1.0
+
+当前状态：**已完成**（2026-09-02）。`tools/build_pdfs.py` 从 114 份学习者 Markdown 源文件生成整套教材 PDF 和 Book0-Book9 分册 PDF；整套 PDF 当前为 227 页。已检查封面、标题层级、中文字体、IPA 字符、表格分页、页眉页脚、页码和文本提取结果。页面索引见 `indexes/page-index.md`，发布文件见 `output/pdf/`。
 
 ## 每章交付状态
 

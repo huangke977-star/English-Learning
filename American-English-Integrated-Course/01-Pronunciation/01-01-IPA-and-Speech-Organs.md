@@ -182,6 +182,6 @@ IPA（International Phonetic Alphabet，国际音标）用一套约定符号表�
 - 句型辅助：Book3 §03-01 词性与基本句型
 - 输出任务：完成本单元三项输出，并保存录音。
 - 复习安排：当天回忆音标符号，3 天后重读例词，7 天后重新录音比较。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 29 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/01-01-review.md`

@@ -102,6 +102,6 @@ We can talk about it tomorrow.
 - 分流建议：发音最低，优先 Book1；听力最低，优先 Book2；语法和句子问题明显，优先 Book3；阅读或写作最低，在 Phase 2 先保持短句练习，Phase 3/4 加强对应模块。
 - 输出任务：保存一份录音和一份写作初稿，作为后续复测对照。
 - 复习安排：30 天后用同一任务复测。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 15 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/00-02-review.md`

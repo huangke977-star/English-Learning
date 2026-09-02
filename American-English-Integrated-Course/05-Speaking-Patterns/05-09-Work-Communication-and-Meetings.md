@@ -74,6 +74,6 @@ Let's recap: [person] will [action] by [date].
 - 阅读辅助：Book6 §06-06 工作信息和简报
 - 写作辅助：Book7 §07-09 工作汇报和问题说明
 - 复习安排：当天跟读会议句，3 天后主持练习，7 天后重写会后消息。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 142 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-09-review.md`

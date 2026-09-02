@@ -72,6 +72,6 @@ Could you [ask someone else / give me more time]?
 - 阅读辅助：Book6 §06-05 日常邮件
 - 写作辅助：Book7 §07-06 正式邮件
 - 复习安排：当天朗读三种语气，3 天后角色扮演，7 天后检查旧邮件的请求是否具体。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 128 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-02-review.md`

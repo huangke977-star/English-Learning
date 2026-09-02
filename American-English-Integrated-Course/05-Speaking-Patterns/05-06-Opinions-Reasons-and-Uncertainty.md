@@ -72,6 +72,6 @@ For these reasons, I recommend [option].
 - 阅读辅助：Book6 §06-09 科普和说明文
 - 写作辅助：Book7 §07-08 比较、原因和观点
 - 复习安排：当天标出观点和证据，3 天后口头表达，7 天后把口语稿改成书面短文。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 136 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-06-review.md`

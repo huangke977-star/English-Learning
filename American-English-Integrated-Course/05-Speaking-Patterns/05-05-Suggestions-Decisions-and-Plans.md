@@ -73,6 +73,6 @@ Let's [meet / review it] at [time], then.
 - 阅读辅助：Book6 §06-04 网页和使用说明
 - 写作辅助：Book7 §07-08 比较、原因和观点
 - 复习安排：当天跟读建议句，3 天后完成决定对话，7 天后检查计划是否包含时间和行动。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 134 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-05-review.md`

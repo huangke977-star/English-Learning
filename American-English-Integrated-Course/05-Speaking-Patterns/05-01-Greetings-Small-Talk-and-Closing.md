@@ -73,6 +73,6 @@ I should let you go. [Take care / Talk to you later].
 - 阅读辅助：Book6 §06-02 短信和聊天记录
 - 写作辅助：Book7 §07-04 日常消息和留言
 - 复习安排：当天跟读，3 天后脱稿寒暄，7 天后把口语表达改写成消息。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 126 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/05-01-review.md`

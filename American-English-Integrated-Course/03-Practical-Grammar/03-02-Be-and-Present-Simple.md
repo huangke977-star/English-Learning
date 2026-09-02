@@ -80,6 +80,6 @@ I am    you/we/they are    he/she/it is
 - 阅读辅助：Book6 §06-01 单句和短句
 - 输出任务：完成个人简介和录音。
 - 复习安排：当天改错，3 天后口头复述，7 天后写一版新简介。
-- PDF 参考页码：发布后填写。
+- PDF 参考页码：整套教材 v1.0，第 80 页。
 
 审查记录：`../09-Reviews-and-Answers/reviews/03-02-review.md`
