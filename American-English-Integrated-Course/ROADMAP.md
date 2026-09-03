@@ -200,7 +200,7 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## Phase 6 发布包 v1.0
 
-当前状态：**已完成**（2026-09-02）。`tools/build_pdfs.py` 从 114 份学习者 Markdown 源文件生成整套教材 PDF 和 Book0-Book9 分册 PDF；整套 PDF 当前为 227 页。`tools/generate_course_audio.ps1` 生成全课程 229 条 MP3，并完成逐个 FFmpeg 解码检查。已检查封面、标题层级、中文字体、IPA 字符、表格分页、页眉页脚、页码和文本提取结果。页面索引见 `indexes/page-index.md`，发布文件见 `output/pdf/`，音频清单见 `assets/complete-audio-manifest.md`。
+当前状态：**已完成**（2026-09-03）。`tools/build_pdfs.py` 从 114 份学习者 Markdown 源文件生成整套教材 PDF 和 Book0-Book9 分册 PDF；整套 PDF 当前为 227 页。`tools/generate_course_audio.ps1` 生成全课程 229 条 MP3，并完成逐个 FFmpeg 解码检查。已检查封面、标题层级、中文字体、IPA 字符、表格分页、页眉页脚、页码和文本提取结果；四类内容索引也已重建并完成链接核验。页面索引见 `indexes/page-index.md`，发布文件见 `output/pdf/`，音频清单见 `assets/complete-audio-manifest.md`。
 
 ## 每章交付状态
 
