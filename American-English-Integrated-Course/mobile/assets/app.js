@@ -21,6 +21,7 @@
     units.forEach((unit) => { byBook[unit.book] = (byBook[unit.book] || 0) + (completed.has(unit.id) ? 1 : 0); });
     document.querySelectorAll('[data-book-progress]').forEach((el) => { const book = el.dataset.bookProgress; const totalBook = units.filter((unit) => String(unit.book) === String(book)).length; el.textContent = `${byBook[book] || 0} / ${totalBook}`; });
     document.querySelectorAll('[data-book-progress-bar]').forEach((el) => { const book = el.dataset.bookProgressBar; const totalBook = units.filter((unit) => String(unit.book) === String(book)).length; el.style.width = `${totalBook ? (byBook[book] || 0) / totalBook * 100 : 0}%`; });
+    document.querySelectorAll('[data-book-counter]').forEach((el) => { const book = el.dataset.bookCounter; const totalBook = units.filter((unit) => String(unit.book) === String(book)).length; el.textContent = `${byBook[book] || 0}/${totalBook}`; });
     document.querySelectorAll('[data-unit]').forEach((row) => {
       const id = row.dataset.unit;
       const doneRow = completed.has(id);

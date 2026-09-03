@@ -290,7 +290,7 @@ def write_home(units: list[Unit]) -> None:
     for book, (title, description) in BOOKS.items():
         count = sum(unit.book == book for unit in units)
         phase_id, phase_label, _ = phase_for(book)
-        books.append(f'<a class="book-row" href="books/book{book}.html" data-book="{book}" data-phase="{phase_id}"><span><small>{phase_label} · {count} 个单元</small><strong>Book{book} · {title}</strong><em>{description}</em></span><span class="book-progress">0/{count}</span></a>')
+        books.append(f'<a class="book-row" href="books/book{book}.html" data-book="{book}" data-phase="{phase_id}"><span><small>{phase_label} · {count} 个单元</small><strong>Book{book} · {title}</strong><em>{description}</em></span><span class="book-progress" data-book-counter="{book}">0/{count}</span></a>')
     body = f"""<main><section class="home-intro"><div class="home-orbit" aria-hidden="true"></div><p class="eyebrow">American English Integrated Course</p>
 <h1>美式英语<br>综合能力训练</h1><p class="home-lead">按阶段学习、按单元完成；例句与练习音频可以直接在手机上播放。</p>
 <div class="home-actions"><a class="button button-primary" data-continue href="units/{units[0].key}.html">开始学习</a><a class="text-action" href="plan.html">查看完整路线 <span>→</span></a></div>
