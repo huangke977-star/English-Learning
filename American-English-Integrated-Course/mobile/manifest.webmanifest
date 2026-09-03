@@ -1,0 +1,17 @@
+{
+  "name": "美式英语综合能力训练",
+  "short_name": "英语学习",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f2ea",
+  "theme_color": "#173044",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

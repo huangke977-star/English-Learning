@@ -60,6 +60,7 @@
 ├── assets/
 ├── indexes/
 ├── output/pdf/
+├── mobile/                 # 手机端响应式 PWA（由 tools/build_mobile_site.py 生成）
 ├── tools/
 └── templates/
 ```
@@ -75,6 +76,8 @@
 学习者可以按路线顺序学习，也可以通过 `indexes/` 按词汇、语法、表达或音素查找内容。
 
 PDF 发布包位于 `output/pdf/`。整套教材使用 `output/pdf/complete-course.pdf`，分册 PDF 使用 `output/pdf/book0.pdf` 至 `output/pdf/book9.pdf`；页面索引见 `indexes/page-index.md` 和各分册旁的 `bookN-page-index.md`。
+
+手机学习网站位于 `mobile/`：首页按 Phase、Book 和单元导航，单元内直接播放配套 MP3，并在本机保存完成进度和阅读字号。修改 Markdown 后运行 `py tools/build_mobile_site.py` 重新生成。仓库配置了 GitHub Pages 工作流，发布后可从 `https://huangke977-star.github.io/English-Learning/mobile/` 访问，并可在手机浏览器中添加到主屏幕。
 
 教材采用“主模块 + 辅助模块”的交叉学习方式。每个单元结尾的“学习导航”会说明：当前内容学完后，应转到哪一册的哪一章哪一节、是否需要先复习，以及完成什么练习后再继续。完整的跨模块路线见 `STUDY-ROUTES.md`。
 

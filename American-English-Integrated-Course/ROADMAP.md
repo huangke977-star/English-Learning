@@ -204,6 +204,10 @@ Book2 全册审查记录：`09-Reviews-and-Answers/reviews/book2-final-review.md
 
 ## 每章交付状态
 
+## 手机学习网站
+
+当前状态：**已完成（静态 PWA）**。`tools/build_mobile_site.py` 从 110 个学习单元生成手机优先网站，包含 Phase → Book → 单元导航、单元内 MP3 播放器、本机学习进度、阅读字号设置和离线页面缓存。GitHub Actions 工作流位于仓库根目录 `.github/workflows/deploy-mobile-site.yml`，发布后访问 `/mobile/` 路径。音频按需从同级 `assets/audio/complete-course/` 加载，不纳入预缓存。
+
 路线图中的章节使用以下状态：
 
 - `未开始`

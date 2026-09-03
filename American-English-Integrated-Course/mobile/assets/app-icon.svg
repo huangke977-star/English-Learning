@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="英语学习">
+  <rect width="192" height="192" rx="44" fill="#173044"/>
+  <circle cx="142" cy="48" r="22" fill="#e66f52"/>
+  <path d="M43 69c0-8 6-14 14-14h54c8 0 14 6 14 14v50c0 8-6 14-14 14H57c-8 0-14-6-14-14V69Z" fill="#f6f2ea"/>
+  <path d="M62 84h45M62 105h31" stroke="#173044" stroke-linecap="round" stroke-width="9"/>
+</svg>
