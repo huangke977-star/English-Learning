@@ -58,9 +58,39 @@
     if (document.body.classList.contains('page-plan') && window.location.hash) { const details = document.querySelector(window.location.hash); if (details && details.tagName === 'DETAILS') details.open = true; }
   }
 
+  function setupInlineSpeech() {
+    const buttons = [...document.querySelectorAll('[data-speak]')];
+    if (!buttons.length) return;
+    const synth = window.speechSynthesis;
+    if (!synth || !window.SpeechSynthesisUtterance) {
+      buttons.forEach((button) => { button.disabled = true; button.title = '当前浏览器不支持发音播放'; });
+      return;
+    }
+    let activeButton = null;
+    const clear = () => { if (activeButton) activeButton.classList.remove('is-speaking'); activeButton = null; };
+    const englishVoice = () => synth.getVoices().find((voice) => /^en-US/i.test(voice.lang)) || synth.getVoices().find((voice) => /^en/i.test(voice.lang));
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      const text = button.dataset.speak;
+      if (!text) return;
+      synth.cancel();
+      clear();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.82;
+      const voice = englishVoice();
+      if (voice) utterance.voice = voice;
+      activeButton = button;
+      button.classList.add('is-speaking');
+      utterance.onend = utterance.onerror = clear;
+      synth.speak(utterance);
+    }));
+    window.addEventListener('pagehide', () => synth.cancel(), { once: true });
+  }
+
   updateProgress();
   setupComplete();
   setupFontSize();
   setupPlanHash();
+  setupInlineSpeech();
   if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register(root + 'sw.js').catch(() => {}));
 })();

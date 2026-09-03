@@ -89,6 +89,82 @@ def audio_from(lines: list[str]) -> tuple[tuple[str, str], ...]:
     return tuple(result)
 
 
+IPA_EXAMPLES = {
+    "i": "see", "ɪ": "sit", "ɛ": "bed", "æ": "cat", "ʌ": "cup", "ə": "about",
+    "ɝ": "bird", "ɚ": "teacher", "u": "food", "ʊ": "book", "ɑ": "father", "ɔ": "talk",
+    "eɪ": "day", "aɪ": "my", "ɔɪ": "boy", "oʊ": "go", "aʊ": "now",
+    "p": "pen", "b": "book", "t": "tea", "d": "day", "k": "key", "g": "go",
+    "f": "fan", "v": "van", "θ": "thin", "ð": "this", "s": "see", "z": "zoo",
+    "ʃ": "she", "ʒ": "measure", "h": "he", "tʃ": "cheese", "dʒ": "jump",
+    "m": "me", "n": "no", "ŋ": "sing", "l": "lee", "r": "red", "j": "yes", "w": "we",
+}
+
+def speech_text(value: str) -> str:
+    """Return only the pronounceable item, never surrounding lesson prose."""
+    stripped = value.strip()
+    if stripped.startswith("/") and stripped.endswith("/"):
+        token = stripped[1:-1].strip()
+        example = IPA_EXAMPLES.get(token.replace("ː", ""))
+        return example or ""
+    without_ipa = re.sub(r"/[^/\s]+/", " ", value)
+    words = re.findall(r"[A-Za-z]+(?:[''-][A-Za-z]+)*", without_ipa)
+    if words:
+        return " ".join(words)
+    ipa_tokens = re.findall(r"/([^/\s]+)/", value)
+    examples = [IPA_EXAMPLES.get(token.replace("ː", "")) for token in ipa_tokens]
+    if ipa_tokens and all(examples):
+        return ", ".join(example for example in examples if example)
+    return ""
+
+
+def listen_button(text: str) -> str:
+    if not text:
+        return ""
+    label = text if len(text) <= 60 else "这段英文"
+    return (
+        f'<button class="listen-button" type="button" data-speak="{html.escape(text, quote=True)}" '
+        f'aria-label="播放发音：{html.escape(label, quote=True)}" title="播放发音">&#128266;</button>'
+    )
+
+
+def inline_code(value: str) -> str:
+    return (
+        '<span class="pronunciation"><code>'
+        + html.escape(value, quote=False)
+        + "</code>"
+        + listen_button(speech_text(value))
+        + "</span>"
+    )
+
+
+def inline_with_standalone_speech(value: str) -> str:
+    rendered = inline(value)
+    stripped = value.strip()
+    if (
+        "data-speak=" in rendered
+        or "<code>" in rendered
+        or re.search(r"[\u4e00-\u9fff]", value)
+        or (stripped.startswith("/") and stripped.endswith("/"))
+        or stripped in {"IPA", "SVC", "SVO", "SVOO", "SVOC"}
+    ):
+        return rendered
+    text = speech_text(value)
+    if not text:
+        return rendered
+    return f'<span class="pronunciation">{rendered}{listen_button(text)}</span>'
+
+
+def table_cell(value: str, fallback_speech: str = "") -> str:
+    rendered = inline_with_standalone_speech(value)
+    if (
+        fallback_speech
+        and "data-speak=" not in rendered
+        and re.search(r"/[^/]+/", value)
+    ):
+        return rendered + listen_button(speech_text(fallback_speech))
+    return rendered
+
+
 def discover_units() -> list[Unit]:
     result = []
     for directory in sorted(ROOT.glob("[0-9][0-9]-*")):
@@ -123,7 +199,11 @@ def inline(value: str) -> str:
         return label
 
     escaped = re.sub(r"\[([^]]+)\]\(([^)]+)\)", markdown_link, escaped)
-    escaped = re.sub(chr(96) + r"([^" + chr(96) + r"]+)" + chr(96), r"<code>\1</code>", escaped)
+    escaped = re.sub(
+        chr(96) + r"([^" + chr(96) + r"]+)" + chr(96),
+        lambda match: inline_code(html.unescape(match.group(1))),
+        escaped,
+    )
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", escaped)
 
@@ -142,24 +222,18 @@ def is_table_separator(line: str) -> bool:
     return bool(split_table(line)) and all(re.fullmatch(r":?-{3,}:?", cell.replace(" ", "")) for cell in split_table(line))
 
 
-def audio_html(unit: Unit) -> str:
-    if not unit.audio:
-        return ""
-    players = []
-    for label, source in unit.audio:
-        players.append(
-            '<div class="audio-player">'
-            f"<p>{inline(label)}</p>"
-            f'<audio controls preload="metadata" src="{html.escape(source, quote=True)}">你的浏览器不支持音频播放。</audio>'
-            "</div>"
+def code_block_html(lines: list[str]) -> str:
+    rendered = []
+    for line in lines:
+        control = listen_button(speech_text(line))
+        rendered.append(
+            '<span class="code-line"><code>'
+            + html.escape(line, quote=False)
+            + "</code>"
+            + control
+            + "</span>"
         )
-    return (
-        '<section class="audio-section" id="audio" aria-labelledby="audio-heading">'
-        '<div class="section-kicker">跟读与听辨</div><h2 id="audio-heading">配套音频</h2>'
-        "<p>点击播放器即可听取；首次播放需要网络。自然速度用于理解，慢速版本用于拆分和跟读。</p>"
-        + "".join(players)
-        + '<p class="audio-note">音频为 Microsoft Zira AI 系统语音，用于听辨、跟读和复习，不替代真人多口音示范。</p></section>'
-    )
+    return '<pre class="playable-code">' + "".join(rendered) + "</pre>"
 
 
 def render_markdown(unit: Unit) -> str:
@@ -177,7 +251,6 @@ def render_markdown(unit: Unit) -> str:
             i += 1
             continue
         if stripped.startswith("## 配套音频"):
-            output.append(audio_html(unit))
             i += 1
             while i < len(lines) and not lines[i].strip().startswith("## "):
                 i += 1
@@ -187,7 +260,7 @@ def render_markdown(unit: Unit) -> str:
             continue
         if stripped.startswith(chr(96) * 3):
             if in_code:
-                output.append(f"<pre><code>{html.escape(chr(10).join(code_lines))}</code></pre>")
+                output.append(code_block_html(code_lines))
                 in_code, code_lines = False, []
             else:
                 in_code = True
@@ -209,8 +282,17 @@ def render_markdown(unit: Unit) -> str:
             while i < len(lines) and lines[i].strip().startswith("|"):
                 rows.append(split_table(lines[i]))
                 i += 1
-            head = "".join(f"<th>{inline(cell)}</th>" for cell in rows[0])
-            body = "".join("<tr>" + "".join(f"<td>{inline(cell)}</td>" for cell in row) + "</tr>" for row in rows[1:])
+            head = "".join(f"<th>{inline_with_standalone_speech(cell)}</th>" for cell in rows[0])
+            speech_column = next(
+                (index for index, cell in enumerate(rows[0]) if cell.strip() in {"英文", "对比", "单词", "例词"}),
+                None,
+            )
+            body_rows = []
+            for row in rows[1:]:
+                fallback = row[speech_column] if speech_column is not None and speech_column < len(row) else ""
+                cells = "".join(f"<td>{table_cell(cell, fallback)}</td>" for cell in row)
+                body_rows.append(f"<tr>{cells}</tr>")
+            body = "".join(body_rows)
             output.append(f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>')
             continue
         if stripped.startswith(">"):
@@ -233,7 +315,7 @@ def render_markdown(unit: Unit) -> str:
                 match = re.match(r"^[-*+]\s+(.+)$", candidate) if tag == "ul" else re.match(r"^\d+[.)]\s+(.+)$", candidate)
                 if not match:
                     break
-                items.append(f"<li>{inline(match.group(1))}</li>")
+                items.append(f"<li>{inline_with_standalone_speech(match.group(1))}</li>")
                 i += 1
             output.append(f"<{tag}>{''.join(items)}</{tag}>")
             continue
@@ -245,7 +327,7 @@ def render_markdown(unit: Unit) -> str:
                 break
             paragraph.append(candidate)
             i += 1
-        output.append(f"<p>{inline(' '.join(paragraph))}</p>")
+        output.append(f"<p>{inline_with_standalone_speech(' '.join(paragraph))}</p>")
     return "\n".join(output)
 
 
@@ -329,8 +411,7 @@ def write_units(units: list[Unit]) -> None:
         following = units[position + 1] if position + 1 < len(units) else None
         prev_html = f'<a class="previous" href="{previous.key}.html"><small>上一单元</small><strong>← {html.escape(previous.title)}</strong></a>' if previous else '<a class="previous" href="../plan.html"><small>返回</small><strong>← 学习路线</strong></a>'
         next_html = f'<a class="next" href="{following.key}.html"><small>下一单元</small><strong>{html.escape(following.title)} →</strong></a>' if following else '<a class="next" href="../plan.html"><small>完成课程</small><strong>回到学习路线 →</strong></a>'
-        audio_cta = '<a class="quiet-button" href="#audio">播放配套音频</a>' if unit.audio else ""
-        body = f"""<main class="unit-page"><div class="unit-crumb"><a href="../books/book{unit.book}.html">Book{unit.book}</a><span>/</span><span>{unit.key}</span></div><section class="unit-hero"><p class="eyebrow">{label} · {phase_title}</p><h1>{unit.key}<br>{html.escape(unit.title)}</h1><p>{inline(unit.goal)}</p><div class="unit-actions"><button class="complete-button" type="button" data-mark-complete data-unit="{unit.key}">标记本单元完成</button>{audio_cta}</div></section><article class="reading-content">{render_markdown(unit)}</article><nav class="unit-pagination" aria-label="单元导航">{prev_html}{next_html}</nav></main><aside class="reading-tools" aria-label="阅读设置"><span>阅读大小</span><button type="button" data-font-size="small">A−</button><button type="button" data-font-size="normal">A</button><button type="button" data-font-size="large">A+</button></aside>"""
+        body = f"""<main class="unit-page"><div class="unit-crumb"><a href="../books/book{unit.book}.html">Book{unit.book}</a><span>/</span><span>{unit.key}</span></div><section class="unit-hero"><p class="eyebrow">{label} · {phase_title}</p><h1>{unit.key}<br>{html.escape(unit.title)}</h1><p>{inline(unit.goal)}</p><div class="unit-actions"><button class="complete-button" type="button" data-mark-complete data-unit="{unit.key}">标记本单元完成</button></div></section><article class="reading-content">{render_markdown(unit)}</article><nav class="unit-pagination" aria-label="单元导航">{prev_html}{next_html}</nav></main><aside class="reading-tools" aria-label="阅读设置"><span>阅读大小</span><button type="button" data-font-size="small">A−</button><button type="button" data-font-size="normal">A</button><button type="button" data-font-size="large">A+</button></aside>"""
         (UNITS_DIR / f"{unit.key}.html").write_text(shell(f"{unit.key} {unit.title}", body, depth=1, page="unit", unit=unit), encoding="utf-8")
 
 
@@ -339,7 +420,7 @@ def write_assets(units: list[Unit]) -> None:
     (ASSETS / "course-data.js").write_text("window.COURSE = " + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v2";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v4";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});
