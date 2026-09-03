@@ -1,0 +1,4 @@
+# Local browser and Python verification artifacts
+.playwright-cli/
+**/__pycache__/
+American-English-Integrated-Course/output/playwright/
