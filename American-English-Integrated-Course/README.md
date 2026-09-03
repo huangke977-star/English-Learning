@@ -77,7 +77,7 @@
 
 PDF 发布包位于 `output/pdf/`。整套教材使用 `output/pdf/complete-course.pdf`，分册 PDF 使用 `output/pdf/book0.pdf` 至 `output/pdf/book9.pdf`；页面索引见 `indexes/page-index.md` 和各分册旁的 `bookN-page-index.md`。
 
-手机学习网站位于 `mobile/`：首页按 Phase、Book 和单元导航，并在本机保存完成进度和阅读字号。音标、单词和英文例句旁的播放按钮会调用浏览器的英语语音，只朗读当前项目；不再在页面中显示含整章内容的 MP3 播放器。原始 MP3 仍保留在 `assets/audio/complete-course/`。修改 Markdown 后运行 `py tools/build_mobile_site.py` 重新生成。仓库配置了 GitHub Pages 工作流，发布后可从 `https://huangke977-star.github.io/English-Learning/mobile/` 访问，并可在手机浏览器中添加到主屏幕。
+手机学习网站位于 `mobile/`：首页按 Phase、Book 和单元导航，并在本机保存完成进度和阅读字号。音标、单词和英文例句旁的播放按钮会按需加载对应的短 MP3，只朗读当前项目；不再在页面中显示含整章内容的 MP3 播放器。原始 MP3 仍保留在 `assets/audio/complete-course/`。修改 Markdown 后先运行 `py tools/build_mobile_site.py`，再运行 `powershell -ExecutionPolicy Bypass -File tools/generate_inline_audio.ps1` 重新生成页面和短音频。仓库配置了 GitHub Pages 工作流，发布后可从 `https://huangke977-star.github.io/English-Learning/mobile/` 访问，并可在手机浏览器中添加到主屏幕。
 
 教材采用“主模块 + 辅助模块”的交叉学习方式。每个单元结尾的“学习导航”会说明：当前内容学完后，应转到哪一册的哪一章哪一节、是否需要先复习，以及完成什么练习后再继续。完整的跨模块路线见 `STUDY-ROUTES.md`。
 

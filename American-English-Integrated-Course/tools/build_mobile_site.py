@@ -8,6 +8,7 @@ stored in localStorage, and on-demand audio players.
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import re
 from dataclasses import dataclass
@@ -19,6 +20,8 @@ SITE = ROOT / "mobile"
 ASSETS = SITE / "assets"
 UNITS_DIR = SITE / "units"
 BOOKS_DIR = SITE / "books"
+INLINE_AUDIO_DIR = ROOT / "assets" / "audio" / "inline"
+INLINE_AUDIO_TEXTS: set[str] = set()
 
 BOOKS = {
     0: ("学习指南与能力诊断", "确定起点，建立每日学习与复习习惯。"),
@@ -120,9 +123,11 @@ def speech_text(value: str) -> str:
 def listen_button(text: str) -> str:
     if not text:
         return ""
+    INLINE_AUDIO_TEXTS.add(text)
+    audio_id = hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
     label = text if len(text) <= 60 else "这段英文"
     return (
-        f'<button class="listen-button" type="button" data-speak="{html.escape(text, quote=True)}" '
+        f'<button class="listen-button" type="button" data-audio="../../assets/audio/inline/{audio_id}.mp3" '
         f'aria-label="播放发音：{html.escape(label, quote=True)}" title="播放发音">&#128266;</button>'
     )
 
@@ -141,7 +146,7 @@ def inline_with_standalone_speech(value: str) -> str:
     rendered = inline(value)
     stripped = value.strip()
     if (
-        "data-speak=" in rendered
+        "data-audio=" in rendered
         or "<code>" in rendered
         or re.search(r"[\u4e00-\u9fff]", value)
         or (stripped.startswith("/") and stripped.endswith("/"))
@@ -158,7 +163,7 @@ def table_cell(value: str, fallback_speech: str = "") -> str:
     rendered = inline_with_standalone_speech(value)
     if (
         fallback_speech
-        and "data-speak=" not in rendered
+        and "data-audio=" not in rendered
         and re.search(r"/[^/]+/", value)
     ):
         return rendered + listen_button(speech_text(fallback_speech))
@@ -418,9 +423,25 @@ def write_units(units: list[Unit]) -> None:
 def write_assets(units: list[Unit]) -> None:
     payload = {"units": [{"id": unit.key, "book": unit.book, "title": unit.title, "path": unit.path} for unit in units], "phases": [{"id": phase_id, "label": label, "title": title, "books": list(books)} for phase_id, label, title, _description, books in PHASES]}
     (ASSETS / "course-data.js").write_text("window.COURSE = " + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
+    inline_manifest = {
+        "generator": "build_mobile_site.py",
+        "items": [
+            {
+                "id": hashlib.sha256(text.encode("utf-8")).hexdigest()[:16],
+                "text": text,
+                "file": f"assets/audio/inline/{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}.mp3",
+            }
+            for text in sorted(INLINE_AUDIO_TEXTS, key=str.casefold)
+        ],
+    }
+    INLINE_AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    (ROOT / "assets" / "inline-audio-manifest.json").write_text(
+        json.dumps(inline_manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v4";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v6";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});
@@ -430,6 +451,7 @@ self.addEventListener("fetch", (event) => {{ const request = event.request; cons
 
 
 def main() -> None:
+    INLINE_AUDIO_TEXTS.clear()
     units = discover_units()
     for directory in (SITE, ASSETS, UNITS_DIR, BOOKS_DIR):
         directory.mkdir(parents=True, exist_ok=True)

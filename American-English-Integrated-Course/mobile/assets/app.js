@@ -58,39 +58,40 @@
     if (document.body.classList.contains('page-plan') && window.location.hash) { const details = document.querySelector(window.location.hash); if (details && details.tagName === 'DETAILS') details.open = true; }
   }
 
-  function setupInlineSpeech() {
-    const buttons = [...document.querySelectorAll('[data-speak]')];
+  function setupInlineAudio() {
+    const buttons = [...document.querySelectorAll('[data-audio]')];
     if (!buttons.length) return;
-    const synth = window.speechSynthesis;
-    if (!synth || !window.SpeechSynthesisUtterance) {
-      buttons.forEach((button) => { button.disabled = true; button.title = '当前浏览器不支持发音播放'; });
-      return;
-    }
-    let activeButton = null;
-    const clear = () => { if (activeButton) activeButton.classList.remove('is-speaking'); activeButton = null; };
-    const englishVoice = () => synth.getVoices().find((voice) => /^en-US/i.test(voice.lang)) || synth.getVoices().find((voice) => /^en/i.test(voice.lang));
+    let active = null;
+    const clear = () => {
+      if (active) active.button.classList.remove('is-speaking');
+      active = null;
+    };
     buttons.forEach((button) => button.addEventListener('click', () => {
-      const text = button.dataset.speak;
-      if (!text) return;
-      synth.cancel();
+      const source = button.dataset.audio;
+      if (!source) return;
+      if (active && active.button === button) {
+        active.audio.pause();
+        active.audio.currentTime = 0;
+        clear();
+        return;
+      }
+      if (active) active.audio.pause();
       clear();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.82;
-      const voice = englishVoice();
-      if (voice) utterance.voice = voice;
-      activeButton = button;
+      const audio = new Audio(source);
+      audio.preload = 'auto';
+      active = { button, audio };
       button.classList.add('is-speaking');
-      utterance.onend = utterance.onerror = clear;
-      synth.speak(utterance);
+      audio.addEventListener('ended', clear, { once: true });
+      audio.addEventListener('error', clear, { once: true });
+      audio.play().catch(clear);
     }));
-    window.addEventListener('pagehide', () => synth.cancel(), { once: true });
+    window.addEventListener('pagehide', () => { if (active) active.audio.pause(); }, { once: true });
   }
 
   updateProgress();
   setupComplete();
   setupFontSize();
   setupPlanHash();
-  setupInlineSpeech();
+  setupInlineAudio();
   if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register(root + 'sw.js').catch(() => {}));
 })();
