@@ -300,9 +300,9 @@ def table_audio_text(value: str, fallback: str, header: str) -> str:
         standard = fallback
         ipa = annotation.replace(" ", "")
         if "tu" in ipa:
-            standard = re.sub(r"\bto\b", "two", standard, count=1, flags=re.IGNORECASE)
+            standard = re.sub(r"\bto\b", "TO", standard, count=1, flags=re.IGNORECASE)
         if "ði" in ipa:
-            standard = re.sub(r"\bthe\b", "thee", standard, count=1, flags=re.IGNORECASE)
+            standard = re.sub(r"\bthe\b", "THE", standard, count=1, flags=re.IGNORECASE)
         return standard
     return fallback
 
