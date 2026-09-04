@@ -432,10 +432,13 @@ def render_markdown(unit: Unit) -> str:
             body_rows = []
             for row in rows[1:]:
                 fallback = row[speech_column] if speech_column is not None and speech_column < len(row) else ""
-                cells = "".join(
-                    f"<td>{table_cell(cell, table_audio_text(cell, fallback, rows[0][index] if index < len(rows[0]) else ''), fallback)}</td>"
-                    for index, cell in enumerate(row)
-                )
+                rendered_cells = []
+                for index, cell in enumerate(row):
+                    header_name = rows[0][index] if index < len(rows[0]) else ""
+                    target = table_audio_text(cell, fallback, header_name)
+                    label = f"{header_name}：{target}" if target and header_name else target
+                    rendered_cells.append(f"<td>{table_cell(cell, target, label)}</td>")
+                cells = "".join(rendered_cells)
                 body_rows.append(f"<tr>{cells}</tr>")
             body = "".join(body_rows)
             output.append(f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>')
@@ -581,7 +584,7 @@ def write_assets(units: list[Unit]) -> None:
     )
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v8";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v9";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});
