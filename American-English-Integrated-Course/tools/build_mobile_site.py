@@ -574,7 +574,7 @@ def write_assets(units: list[Unit]) -> None:
                 "text": text,
                 "file": f"assets/audio/inline/{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}.mp3",
             }
-            for text in sorted(INLINE_AUDIO_TEXTS, key=str.casefold)
+            for text in sorted(INLINE_AUDIO_TEXTS, key=lambda value: (value.casefold(), value))
         ],
     }
     INLINE_AUDIO_DIR.mkdir(parents=True, exist_ok=True)
