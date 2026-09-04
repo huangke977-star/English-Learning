@@ -15,17 +15,56 @@ if (-not (Test-Path -LiteralPath $ManifestPath)) {
 }
 
 New-Item -ItemType Directory -Force $AudioRoot, $TempRoot | Out-Null
-$voice = New-Object -ComObject SAPI.SpVoice
-$zira = $voice.GetVoices() | Where-Object { $_.GetDescription() -match "Zira" } | Select-Object -First 1
-if ($null -eq $zira) { throw "Microsoft Zira voice is not installed." }
-$voice.Voice = $zira
-$voice.Rate = -2
-$voice.Volume = 100
+$espeak = $null
+$espeakCandidates = @(
+    (Get-Command espeak-ng -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -ErrorAction SilentlyContinue),
+    "C:\Program Files\eSpeak NG\espeak-ng.exe",
+    "C:\Program Files (x86)\eSpeak NG\espeak-ng.exe"
+)
+foreach ($candidate in $espeakCandidates) {
+    if ($candidate -and (Test-Path -LiteralPath $candidate)) { $espeak = $candidate; break }
+}
+
+# eSpeak NG consumes the actual phoneme code and is therefore the canonical
+# path.  Keep Microsoft Zira as a local fallback for machines without eSpeak.
+$voice = $null
+if (-not $espeak) {
+    try {
+        $voice = New-Object -ComObject SAPI.SpVoice
+        $zira = $voice.GetVoices() | Where-Object { $_.GetDescription() -match "Zira" } | Select-Object -First 1
+        if ($null -eq $zira) { throw "Microsoft Zira voice is not installed." }
+        $voice.Voice = $zira
+        $voice.Rate = -2
+        $voice.Volume = 100
+    } catch {
+        throw "eSpeak NG was not found and Microsoft Zira fallback is unavailable: $($_.Exception.Message)"
+    }
+}
 $manifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
 $items = @($manifest.items)
 $generated = 0
 $existing = 0
 $failed = New-Object System.Collections.Generic.List[string]
+
+function Write-SapiWav([string]$Text, [string]$Wav) {
+    $stream = New-Object -ComObject SAPI.SpFileStream
+    try {
+        $stream.Open($Wav, 3, $false)
+        $voice.AudioOutputStream = $stream
+        [void]$voice.Speak($Text)
+    } finally {
+        try { $stream.Close() } catch {}
+        $voice.AudioOutputStream = $null
+    }
+}
+
+function Write-EspeakWav([string]$Code, [string]$Wav) {
+    if (-not $Code) { throw "Missing eSpeak phoneme code" }
+    & $espeak -v en-us -s 120 -p 50 -a 100 -w $Wav "[[$Code]]" 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $Wav)) {
+        throw "eSpeak NG could not synthesize phoneme [$Code]"
+    }
+}
 
 function Get-TrimBounds([string]$Wav) {
     $duration = [double](& $ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $Wav)
@@ -56,13 +95,13 @@ foreach ($item in $items) {
     $output = Join-Path $CourseRoot $item.file.Replace('/', '\')
     if ((Test-Path -LiteralPath $output) -and -not $Force) { $existing++; continue }
     $wav = Join-Path $TempRoot ("$($item.id).wav")
-    $stream = New-Object -ComObject SAPI.SpFileStream
+    $stream = $null
     try {
-        $stream.Open($wav, 3, $false)
-        $voice.AudioOutputStream = $stream
-        [void]$voice.Speak([string]$item.text)
-        $stream.Close()
-        $voice.AudioOutputStream = $null
+        if ($espeak) {
+            Write-EspeakWav ([string]$item.phoneme_code) $wav
+        } else {
+            Write-SapiWav ([string]$item.text) $wav
+        }
         $bounds = Get-TrimBounds $wav
         & $ffmpeg -y -v error -ss $bounds.Start -t $bounds.Duration -i $wav -codec:a libmp3lame -q:a 4 $output 2>$null
         if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $output)) { throw "FFmpeg could not encode $($item.id)" }
@@ -70,8 +109,8 @@ foreach ($item in $items) {
     } catch {
         [void]$failed.Add("$($item.id): $($_.Exception.Message)")
     } finally {
-        try { $stream.Close() } catch {}
-        $voice.AudioOutputStream = $null
+        if ($stream) { try { $stream.Close() } catch {} }
+        if ($voice) { $voice.AudioOutputStream = $null }
         Remove-Item -LiteralPath $wav -Force -ErrorAction SilentlyContinue
     }
 }

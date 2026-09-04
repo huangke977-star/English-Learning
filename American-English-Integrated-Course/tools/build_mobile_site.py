@@ -22,7 +22,7 @@ UNITS_DIR = SITE / "units"
 BOOKS_DIR = SITE / "books"
 INLINE_AUDIO_DIR = ROOT / "assets" / "audio" / "inline"
 INLINE_AUDIO_TEXTS: set[str] = set()
-PURE_AUDIO_ITEMS: dict[str, tuple[str, str]] = {}
+PURE_AUDIO_ITEMS: dict[str, tuple[str, str, str]] = {}
 
 BOOKS = {
     0: ("学习指南与能力诊断", "确定起点，建立每日学习与复习习惯。"),
@@ -115,6 +115,23 @@ PURE_PHONEME_TEXT = {
     "f": "fff", "v": "vvv", "θ": "thhh", "ð": "thuh", "s": "sss", "z": "zzz",
     "ʃ": "shh", "ʒ": "zh", "h": "hhh", "tʃ": "ch", "dʒ": "juh",
     "m": "mmm", "n": "nnn", "ŋ": "ng", "l": "lll", "r": "rrr", "j": "yuh", "w": "wuh",
+}
+
+# eSpeak NG accepts its compact phoneme alphabet inside [[...]] markers.  The
+# mapping is kept separate from PURE_PHONEME_TEXT so the learner-facing label
+# remains IPA while the generator receives an unambiguous pronunciation code.
+ESPEAK_PHONEME = {
+    "i": "i:", "ɪ": "'I", "ɛ": "E", "æ": "a", "ʌ": "V", "ə": "@",
+    # eSpeak's lexical code for /ɪ/ needs a primary-stress mark when isolated;
+    # without the leading apostrophe it is interpreted as /i/ by the CLI.
+    # eSpeak also needs an explicit non-syllabic r after 3: to keep /ɝ/ rhotic;
+    # plain 3 gives the unstressed /ɚ/ used in teacher, color, etc.
+    "ɝ": "3:r-", "ɚ": "3", "u": "u:", "ʊ": "U", "ɑ": "A:", "ɔ": "O",
+    "eɪ": "eI", "aɪ": "aI", "ɔɪ": "OI", "oʊ": "oU", "aʊ": "aU",
+    "p": "p", "b": "b", "t": "t", "d": "d", "k": "k", "g": "g",
+    "f": "f", "v": "v", "θ": "T", "ð": "D", "s": "s", "z": "z",
+    "ʃ": "S", "ʒ": "Z", "h": "h", "tʃ": "tS", "dʒ": "dZ",
+    "m": "m", "n": "n", "ŋ": "N", "l": "l", "r": "r-", "j": "j", "w": "w",
 }
 
 SLASH_PRONUNCIATION = re.compile(r"/[^/\r\n]+/")
@@ -224,8 +241,9 @@ def pure_phoneme_button(token: str) -> str:
     if not speech:
         return ""
     audio_id = hashlib.sha256(("pure:" + normalized).encode("utf-8")).hexdigest()[:16]
-    PURE_AUDIO_ITEMS[normalized] = (audio_id, speech)
-    label = f"播放纯音素近似 {token}"
+    phoneme_code = ESPEAK_PHONEME.get(normalized, "")
+    PURE_AUDIO_ITEMS[normalized] = (audio_id, speech, phoneme_code)
+    label = f"播放合成纯音素 {token}（eSpeak NG）"
     return (
         f'<button class="listen-button pure-phoneme-button" type="button" '
         f'data-audio="../../assets/audio/phoneme/{audio_id}.mp3" '
@@ -512,6 +530,35 @@ def render_markdown(unit: Unit) -> str:
     return "\n".join(output)
 
 
+def audio_panel(unit: Unit) -> str:
+    """Render chapter-level recordings next to the unit content.
+
+    The source Markdown keeps the canonical links, while the mobile page adds
+    a clearly labelled player for each file so learners can identify exactly
+    which recording belongs to this unit.  Inline word/phoneme buttons remain
+    separate and are generated from the text itself.
+    """
+    if not unit.audio:
+        return ""
+    players = []
+    for label, source in unit.audio:
+        safe_label = html.escape(label, quote=False)
+        safe_source = html.escape(source, quote=True)
+        players.append(
+            f'<div class="audio-player"><p>{safe_label}</p>'
+            f'<audio controls preload="none" src="{safe_source}">'
+            f'<a href="{safe_source}">{safe_label}</a></audio></div>'
+        )
+    return (
+        '<section class="audio-section" aria-labelledby="unit-audio-title">'
+        '<h2 id="unit-audio-title">本单元配套音频</h2>'
+        '<p>每个播放器只对应本单元的一种练习版本；需要逐词跟读时，请使用正文旁的喇叭按钮。</p>'
+        + "".join(players)
+        + '<p class="audio-note">音频为 AI 生成的 Microsoft Zira 系统语音，仅用于听辨和跟读训练。</p>'
+        + '</section>'
+    )
+
+
 def shell(title: str, body: str, *, depth: int, page: str, unit: Unit | None = None) -> str:
     prefix = "../" * depth
     unit_attr = f' data-unit-id="{unit.key}"' if unit else ""
@@ -592,7 +639,7 @@ def write_units(units: list[Unit]) -> None:
         following = units[position + 1] if position + 1 < len(units) else None
         prev_html = f'<a class="previous" href="{previous.key}.html"><small>上一单元</small><strong>← {html.escape(previous.title)}</strong></a>' if previous else '<a class="previous" href="../plan.html"><small>返回</small><strong>← 学习路线</strong></a>'
         next_html = f'<a class="next" href="{following.key}.html"><small>下一单元</small><strong>{html.escape(following.title)} →</strong></a>' if following else '<a class="next" href="../plan.html"><small>完成课程</small><strong>回到学习路线 →</strong></a>'
-        body = f"""<main class="unit-page"><div class="unit-crumb"><a href="../books/book{unit.book}.html">Book{unit.book}</a><span>/</span><span>{unit.key}</span></div><section class="unit-hero"><p class="eyebrow">{label} · {phase_title}</p><h1>{unit.key}<br>{html.escape(unit.title)}</h1><p>{inline(unit.goal)}</p><div class="unit-actions"><button class="complete-button" type="button" data-mark-complete data-unit="{unit.key}">标记本单元完成</button></div></section><article class="reading-content">{render_markdown(unit)}</article><nav class="unit-pagination" aria-label="单元导航">{prev_html}{next_html}</nav></main><aside class="reading-tools" aria-label="阅读设置"><span>阅读大小</span><button type="button" data-font-size="small">A−</button><button type="button" data-font-size="normal">A</button><button type="button" data-font-size="large">A+</button></aside>"""
+        body = f"""<main class="unit-page"><div class="unit-crumb"><a href="../books/book{unit.book}.html">Book{unit.book}</a><span>/</span><span>{unit.key}</span></div><section class="unit-hero"><p class="eyebrow">{label} · {phase_title}</p><h1>{unit.key}<br>{html.escape(unit.title)}</h1><p>{inline(unit.goal)}</p><div class="unit-actions"><button class="complete-button" type="button" data-mark-complete data-unit="{unit.key}">标记本单元完成</button></div></section>{audio_panel(unit)}<article class="reading-content">{render_markdown(unit)}</article><nav class="unit-pagination" aria-label="单元导航">{prev_html}{next_html}</nav></main><aside class="reading-tools" aria-label="阅读设置"><span>阅读大小</span><button type="button" data-font-size="small">A−</button><button type="button" data-font-size="normal">A</button><button type="button" data-font-size="large">A+</button></aside>"""
         (UNITS_DIR / f"{unit.key}.html").write_text(shell(f"{unit.key} {unit.title}", body, depth=1, page="unit", unit=unit), encoding="utf-8")
 
 
@@ -617,15 +664,16 @@ def write_assets(units: list[Unit]) -> None:
     )
     pure_manifest = {
         "generator": "build_mobile_site.py",
-        "note": "纯音素近似音频；请结合示例词和词典音频复核。",
+        "note": "纯音素合成音频优先使用 eSpeak NG；请结合示例词和词典真人音频复核。",
         "items": [
             {
                 "id": audio_id,
                 "token": token,
                 "text": speech,
+                "phoneme_code": phoneme_code,
                 "file": f"assets/audio/phoneme/{audio_id}.mp3",
             }
-            for token, (audio_id, speech) in sorted(PURE_AUDIO_ITEMS.items())
+            for token, (audio_id, speech, phoneme_code) in sorted(PURE_AUDIO_ITEMS.items())
         ],
     }
     (ROOT / "assets" / "pure-phoneme-manifest.json").write_text(
@@ -634,7 +682,7 @@ def write_assets(units: list[Unit]) -> None:
     )
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v10";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v11";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});

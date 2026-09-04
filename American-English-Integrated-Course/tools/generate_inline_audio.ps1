@@ -1,6 +1,7 @@
 param(
     [switch]$Force,
-    [int]$Limit = 0
+    [int]$Limit = 0,
+    [string]$OnlyId = ""
 )
 
 # FFmpeg emits harmless layout notices on stderr. Validate each exit code below
@@ -28,7 +29,8 @@ $voice.Rate = 0
 $voice.Volume = 100
 $manifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
 $items = @($manifest.items)
-if ($Limit -gt 0) { $items = @($items | Select-Object -First $Limit) }
+if ($OnlyId) { $items = @($items | Where-Object { $_.id -eq $OnlyId }) }
+elseif ($Limit -gt 0) { $items = @($items | Select-Object -First $Limit) }
 $generated = 0
 $existing = 0
 $failed = New-Object System.Collections.Generic.List[string]
@@ -113,6 +115,30 @@ function Write-SapiWav([string]$Text, [int]$Rate, [int]$Volume, [string]$Wav) {
     }
 }
 
+function Write-StressedTarget([string]$Text, [string]$Wav, [string]$ProcessedWav) {
+    # English focus is primarily signalled by pitch movement, duration and
+    # loudness.  SAPI ignores capitalization, so apply all three acoustically
+    # to the isolated target while keeping the surrounding words unchanged.
+    Write-SapiWav $Text -4 100 $Wav
+    & $ffmpeg -y -v error -i $Wav -af 'asetrate=22050*1.12,aresample=22050,atempo=0.82,volume=1.55' $ProcessedWav 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $ProcessedWav)) {
+        throw "FFmpeg could not apply stress contrast"
+    }
+    Move-Item -LiteralPath $ProcessedWav -Destination $Wav -Force
+}
+
+function Trim-WavInPlace([string]$Wav) {
+    # Trim every segment before concatenation.  Trimming only the final file
+    # would leave SAPI's padding between prefix/target/suffix segments.
+    $bounds = Get-TrimBounds $Wav
+    $trimmed = "$Wav.trim.wav"
+    & $ffmpeg -y -v error -ss $bounds.Start -t $bounds.Duration -i $Wav -codec:a pcm_s16le $trimmed 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $trimmed)) {
+        throw "FFmpeg could not trim segment $Wav"
+    }
+    Move-Item -LiteralPath $trimmed -Destination $Wav -Force
+}
+
 function Convert-StressedToMp3([string]$Text, [string]$Output, [string]$ItemId) {
     $stress = @(Get-StressMatches $Text)
     if ($stress.Count -eq 0) { return $false }
@@ -127,6 +153,7 @@ function Convert-StressedToMp3([string]$Text, [string]$Output, [string]$ItemId) 
             if ($prefix) {
                 $wav = Join-Path $segmentRoot ("$index-prefix.wav")
                 Write-SapiWav $prefix 0 100 $wav
+                Trim-WavInPlace $wav
                 $segments.Add($wav)
                 $index++
             }
@@ -134,12 +161,9 @@ function Convert-StressedToMp3([string]$Text, [string]$Output, [string]$ItemId) 
             # A slower, louder isolated target is an intentional teaching
             # contrast; no spoken labels are inserted into the learner audio.
             $wav = Join-Path $segmentRoot ("$index-target.wav")
-            Write-SapiWav $target -3 100 $wav
-            $amplified = Join-Path $segmentRoot ("$index-target-amplified.wav")
-            & $ffmpeg -y -v error -i $wav -af 'volume=1.35' $amplified 2>$null
-            if ($LASTEXITCODE -eq 0 -and (Test-Path -LiteralPath $amplified)) {
-                Move-Item -LiteralPath $amplified -Destination $wav -Force
-            }
+            $processed = Join-Path $segmentRoot ("$index-target-stressed.wav")
+            Write-StressedTarget $target $wav $processed
+            Trim-WavInPlace $wav
             $segments.Add($wav)
             $index++
             $cursor = $match.Index + $match.Length
@@ -148,6 +172,7 @@ function Convert-StressedToMp3([string]$Text, [string]$Output, [string]$ItemId) 
         if ($suffix) {
             $wav = Join-Path $segmentRoot ("$index-suffix.wav")
             Write-SapiWav $suffix 0 100 $wav
+            Trim-WavInPlace $wav
             $segments.Add($wav)
         }
         if ($segments.Count -eq 0) { return $false }
