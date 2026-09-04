@@ -22,6 +22,7 @@ UNITS_DIR = SITE / "units"
 BOOKS_DIR = SITE / "books"
 INLINE_AUDIO_DIR = ROOT / "assets" / "audio" / "inline"
 INLINE_AUDIO_TEXTS: set[str] = set()
+PURE_AUDIO_ITEMS: dict[str, tuple[str, str]] = {}
 
 BOOKS = {
     0: ("学习指南与能力诊断", "确定起点，建立每日学习与复习习惯。"),
@@ -101,6 +102,19 @@ IPA_EXAMPLES = {
     "f": "fan", "v": "van", "θ": "thin", "ð": "this", "s": "see", "z": "zoo",
     "ʃ": "she", "ʒ": "measure", "h": "he", "tʃ": "cheese", "dʒ": "jump",
     "m": "me", "n": "no", "ŋ": "sing", "l": "lee", "r": "red", "j": "yes", "w": "we",
+}
+
+# Microsoft SAPI cannot consume IPA/SSML phoneme symbols reliably on this
+# machine. These short carrier spellings approximate one sound and are exposed
+# as a clearly labelled supplement; the example-word button remains canonical.
+PURE_PHONEME_TEXT = {
+    "i": "ee", "ɪ": "ih", "ɛ": "eh", "æ": "aeh", "ʌ": "uh", "ə": "uh",
+    "ɝ": "err", "ɚ": "er", "u": "oo", "ʊ": "u", "ɑ": "ah", "ɔ": "aw",
+    "eɪ": "ay", "aɪ": "eye", "ɔɪ": "oy", "oʊ": "oh", "aʊ": "ow",
+    "p": "puh", "b": "buh", "t": "tuh", "d": "duh", "k": "kuh", "g": "guh",
+    "f": "fff", "v": "vvv", "θ": "thhh", "ð": "thuh", "s": "sss", "z": "zzz",
+    "ʃ": "shh", "ʒ": "zh", "h": "hhh", "tʃ": "ch", "dʒ": "juh",
+    "m": "mmm", "n": "nnn", "ŋ": "ng", "l": "lll", "r": "rrr", "j": "yuh", "w": "wuh",
 }
 
 SLASH_PRONUNCIATION = re.compile(r"/[^/\r\n]+/")
@@ -204,17 +218,36 @@ def listen_button(text: str, label: str | None = None) -> str:
     )
 
 
+def pure_phoneme_button(token: str) -> str:
+    normalized = normalize_ipa_token(token)
+    speech = PURE_PHONEME_TEXT.get(normalized)
+    if not speech:
+        return ""
+    audio_id = hashlib.sha256(("pure:" + normalized).encode("utf-8")).hexdigest()[:16]
+    PURE_AUDIO_ITEMS[normalized] = (audio_id, speech)
+    label = f"播放纯音素近似 {token}"
+    return (
+        f'<button class="listen-button pure-phoneme-button" type="button" '
+        f'data-audio="../../assets/audio/phoneme/{audio_id}.mp3" '
+        f'aria-label="{html.escape(label, quote=True)}" title="{html.escape(label, quote=True)}">纯</button>'
+    )
+
+
 def inline_code(value: str) -> str:
     speech = speech_text(value)
     stripped = value.strip()
     label = None
     if speech and stripped.startswith("/") and stripped.endswith("/"):
         label = f"音标示例 {stripped}：{speech}"
+    pure = ""
+    if speech and stripped.startswith("/") and stripped.endswith("/"):
+        pure = pure_phoneme_button(stripped[1:-1].strip())
     return (
         '<span class="pronunciation"><code>'
         + html.escape(value, quote=False)
         + "</code>"
         + listen_button(speech, label)
+        + pure
         + "</span>"
     )
 
@@ -582,9 +615,26 @@ def write_assets(units: list[Unit]) -> None:
         json.dumps(inline_manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+    pure_manifest = {
+        "generator": "build_mobile_site.py",
+        "note": "纯音素近似音频；请结合示例词和词典音频复核。",
+        "items": [
+            {
+                "id": audio_id,
+                "token": token,
+                "text": speech,
+                "file": f"assets/audio/phoneme/{audio_id}.mp3",
+            }
+            for token, (audio_id, speech) in sorted(PURE_AUDIO_ITEMS.items())
+        ],
+    }
+    (ROOT / "assets" / "pure-phoneme-manifest.json").write_text(
+        json.dumps(pure_manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v9";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v10";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});
@@ -604,6 +654,7 @@ def validate_audio_mapping() -> None:
 
 def main() -> None:
     INLINE_AUDIO_TEXTS.clear()
+    PURE_AUDIO_ITEMS.clear()
     validate_audio_mapping()
     units = discover_units()
     for directory in (SITE, ASSETS, UNITS_DIR, BOOKS_DIR):

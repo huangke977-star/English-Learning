@@ -1,0 +1,252 @@
+{
+  "generator": "build_mobile_site.py",
+  "note": "纯音素近似音频；请结合示例词和词典音频复核。",
+  "items": [
+    {
+      "id": "a31b83e7109e55d5",
+      "token": "aɪ",
+      "text": "eye",
+      "file": "assets/audio/phoneme/a31b83e7109e55d5.mp3"
+    },
+    {
+      "id": "845e1ad6f3a0ddf7",
+      "token": "aʊ",
+      "text": "ow",
+      "file": "assets/audio/phoneme/845e1ad6f3a0ddf7.mp3"
+    },
+    {
+      "id": "065fe4666c57696b",
+      "token": "b",
+      "text": "buh",
+      "file": "assets/audio/phoneme/065fe4666c57696b.mp3"
+    },
+    {
+      "id": "587560ba0b162c1e",
+      "token": "d",
+      "text": "duh",
+      "file": "assets/audio/phoneme/587560ba0b162c1e.mp3"
+    },
+    {
+      "id": "69c2a98a7b8dc74f",
+      "token": "dʒ",
+      "text": "juh",
+      "file": "assets/audio/phoneme/69c2a98a7b8dc74f.mp3"
+    },
+    {
+      "id": "880c7d80c833dc3c",
+      "token": "eɪ",
+      "text": "ay",
+      "file": "assets/audio/phoneme/880c7d80c833dc3c.mp3"
+    },
+    {
+      "id": "14126684e63cbc92",
+      "token": "f",
+      "text": "fff",
+      "file": "assets/audio/phoneme/14126684e63cbc92.mp3"
+    },
+    {
+      "id": "6da46328fcbae49d",
+      "token": "g",
+      "text": "guh",
+      "file": "assets/audio/phoneme/6da46328fcbae49d.mp3"
+    },
+    {
+      "id": "c5661f566bfc611c",
+      "token": "h",
+      "text": "hhh",
+      "file": "assets/audio/phoneme/c5661f566bfc611c.mp3"
+    },
+    {
+      "id": "bfb2dd1bb6a95e02",
+      "token": "i",
+      "text": "ee",
+      "file": "assets/audio/phoneme/bfb2dd1bb6a95e02.mp3"
+    },
+    {
+      "id": "b4891ee820851549",
+      "token": "j",
+      "text": "yuh",
+      "file": "assets/audio/phoneme/b4891ee820851549.mp3"
+    },
+    {
+      "id": "4c85e70541ed5845",
+      "token": "k",
+      "text": "kuh",
+      "file": "assets/audio/phoneme/4c85e70541ed5845.mp3"
+    },
+    {
+      "id": "7e099f8e54754814",
+      "token": "l",
+      "text": "lll",
+      "file": "assets/audio/phoneme/7e099f8e54754814.mp3"
+    },
+    {
+      "id": "bf567740c253a1d5",
+      "token": "m",
+      "text": "mmm",
+      "file": "assets/audio/phoneme/bf567740c253a1d5.mp3"
+    },
+    {
+      "id": "992b34e60938d44a",
+      "token": "n",
+      "text": "nnn",
+      "file": "assets/audio/phoneme/992b34e60938d44a.mp3"
+    },
+    {
+      "id": "29c1c82304a3a2c5",
+      "token": "oʊ",
+      "text": "oh",
+      "file": "assets/audio/phoneme/29c1c82304a3a2c5.mp3"
+    },
+    {
+      "id": "ba4ae6b864a7d70c",
+      "token": "p",
+      "text": "puh",
+      "file": "assets/audio/phoneme/ba4ae6b864a7d70c.mp3"
+    },
+    {
+      "id": "61c1ad22e724e305",
+      "token": "r",
+      "text": "rrr",
+      "file": "assets/audio/phoneme/61c1ad22e724e305.mp3"
+    },
+    {
+      "id": "54ce98075bf53460",
+      "token": "s",
+      "text": "sss",
+      "file": "assets/audio/phoneme/54ce98075bf53460.mp3"
+    },
+    {
+      "id": "e0b8cce189b53a35",
+      "token": "t",
+      "text": "tuh",
+      "file": "assets/audio/phoneme/e0b8cce189b53a35.mp3"
+    },
+    {
+      "id": "e63e59e33943f69c",
+      "token": "tʃ",
+      "text": "ch",
+      "file": "assets/audio/phoneme/e63e59e33943f69c.mp3"
+    },
+    {
+      "id": "da46770846f1bf93",
+      "token": "u",
+      "text": "oo",
+      "file": "assets/audio/phoneme/da46770846f1bf93.mp3"
+    },
+    {
+      "id": "bd5e8048c733bae7",
+      "token": "v",
+      "text": "vvv",
+      "file": "assets/audio/phoneme/bd5e8048c733bae7.mp3"
+    },
+    {
+      "id": "bfc22232ea75c203",
+      "token": "w",
+      "text": "wuh",
+      "file": "assets/audio/phoneme/bfc22232ea75c203.mp3"
+    },
+    {
+      "id": "9197449151f6a1c9",
+      "token": "z",
+      "text": "zzz",
+      "file": "assets/audio/phoneme/9197449151f6a1c9.mp3"
+    },
+    {
+      "id": "76b715eb03b2e757",
+      "token": "æ",
+      "text": "aeh",
+      "file": "assets/audio/phoneme/76b715eb03b2e757.mp3"
+    },
+    {
+      "id": "071e78022983baf7",
+      "token": "ð",
+      "text": "thuh",
+      "file": "assets/audio/phoneme/071e78022983baf7.mp3"
+    },
+    {
+      "id": "3a7f1180c48cee60",
+      "token": "ŋ",
+      "text": "ng",
+      "file": "assets/audio/phoneme/3a7f1180c48cee60.mp3"
+    },
+    {
+      "id": "150f6bae5ec4fac6",
+      "token": "ɑ",
+      "text": "ah",
+      "file": "assets/audio/phoneme/150f6bae5ec4fac6.mp3"
+    },
+    {
+      "id": "f13bbc3174ee3681",
+      "token": "ɔ",
+      "text": "aw",
+      "file": "assets/audio/phoneme/f13bbc3174ee3681.mp3"
+    },
+    {
+      "id": "d3b4b2997bee72c1",
+      "token": "ɔɪ",
+      "text": "oy",
+      "file": "assets/audio/phoneme/d3b4b2997bee72c1.mp3"
+    },
+    {
+      "id": "696fa70ba99f3810",
+      "token": "ə",
+      "text": "uh",
+      "file": "assets/audio/phoneme/696fa70ba99f3810.mp3"
+    },
+    {
+      "id": "2475cbbf3a30684c",
+      "token": "ɚ",
+      "text": "er",
+      "file": "assets/audio/phoneme/2475cbbf3a30684c.mp3"
+    },
+    {
+      "id": "1319d9b44f9ecd57",
+      "token": "ɛ",
+      "text": "eh",
+      "file": "assets/audio/phoneme/1319d9b44f9ecd57.mp3"
+    },
+    {
+      "id": "f61e072570e8af21",
+      "token": "ɝ",
+      "text": "err",
+      "file": "assets/audio/phoneme/f61e072570e8af21.mp3"
+    },
+    {
+      "id": "59b9271148da0694",
+      "token": "ɪ",
+      "text": "ih",
+      "file": "assets/audio/phoneme/59b9271148da0694.mp3"
+    },
+    {
+      "id": "9e40704c95d0ebfc",
+      "token": "ʃ",
+      "text": "shh",
+      "file": "assets/audio/phoneme/9e40704c95d0ebfc.mp3"
+    },
+    {
+      "id": "9953a54e950f9e4b",
+      "token": "ʊ",
+      "text": "u",
+      "file": "assets/audio/phoneme/9953a54e950f9e4b.mp3"
+    },
+    {
+      "id": "96bd2cf37266ccb9",
+      "token": "ʌ",
+      "text": "uh",
+      "file": "assets/audio/phoneme/96bd2cf37266ccb9.mp3"
+    },
+    {
+      "id": "013651da9d939736",
+      "token": "ʒ",
+      "text": "zh",
+      "file": "assets/audio/phoneme/013651da9d939736.mp3"
+    },
+    {
+      "id": "649d5c28f8bef79d",
+      "token": "θ",
+      "text": "thhh",
+      "file": "assets/audio/phoneme/649d5c28f8bef79d.mp3"
+    }
+  ]
+}
