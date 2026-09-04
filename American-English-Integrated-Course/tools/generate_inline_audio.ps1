@@ -25,6 +25,7 @@ if ($null -eq $zira) {
 }
 $voice.Voice = $zira
 $voice.Rate = 0
+$voice.Volume = 100
 $manifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
 $items = @($manifest.items)
 if ($Limit -gt 0) { $items = @($items | Select-Object -First $Limit) }
@@ -61,24 +62,137 @@ function Get-TrimBounds([string]$Wav) {
     return @{ Start = $start; Duration = $end - $start }
 }
 
+function Get-StressMatches([string]$Text) {
+    # The teaching files mark sentence focus with capitals (BLUE, I CAN go)
+    # and lexical stress with mixed-case spellings (REcord, reCORD). SAPI
+    # ignores case, so these words must be rendered as separate segments.
+    $ignored = @('I', 'ID', 'HJ', 'IPA', 'SVO', 'SVC', 'SVOO', 'SVOC', 'SVA', 'SV')
+    $stressMatches = New-Object System.Collections.Generic.List[object]
+    foreach ($match in [regex]::Matches($Text, "[A-Za-z]+(?:['-][A-Za-z]+)*")) {
+        $word = $match.Value
+        if ($ignored -contains $word -or $word.Length -lt 2) { continue }
+        $hasUpper = $word -cmatch '[A-Z]'
+        $hasLower = $word -cmatch '[a-z]'
+        $upperCount = ([regex]::Matches($word, '[A-Z]')).Count
+        # Mixed-case stress or a fully-capitalized content/function word.
+        if (($hasUpper -and $hasLower -and $upperCount -ge 2) -or
+            ($hasUpper -and -not $hasLower -and $word.Length -ge 2)) {
+            [void]$stressMatches.Add($match)
+        }
+    }
+    return $stressMatches.ToArray()
+}
+
+function Get-ContextSpeech([string]$Text) {
+    # SAPI ignores capitalization in isolated lexical-stress examples. Give
+    # heteronyms a grammatical cue so the voice selects the intended stress.
+    switch -CaseSensitive ($Text) {
+        'REcord' { return 'a record' }
+        'reCORD' { return 'to record' }
+        'PREsent' { return 'a present' }
+        'preSENT' { return 'to present' }
+        'PERmit' { return 'a permit' }
+        'perMIT' { return 'to permit' }
+        default { return '' }
+    }
+}
+
+function Write-SapiWav([string]$Text, [int]$Rate, [int]$Volume, [string]$Wav) {
+    $stream = New-Object -ComObject SAPI.SpFileStream
+    try {
+        $stream.Open($Wav, 3, $false)
+        $voice.AudioOutputStream = $stream
+        $voice.Rate = $Rate
+        $voice.Volume = $Volume
+        [void]$voice.Speak($Text)
+    } finally {
+        try { $stream.Close() } catch {}
+        $voice.AudioOutputStream = $null
+        $voice.Rate = 0
+        $voice.Volume = 100
+    }
+}
+
+function Convert-StressedToMp3([string]$Text, [string]$Output, [string]$ItemId) {
+    $stress = @(Get-StressMatches $Text)
+    if ($stress.Count -eq 0) { return $false }
+    $segmentRoot = Join-Path $TempRoot ("stress-" + $ItemId)
+    New-Item -ItemType Directory -Force $segmentRoot | Out-Null
+    $segments = New-Object System.Collections.Generic.List[string]
+    $cursor = 0
+    $index = 0
+    try {
+        foreach ($match in $stress) {
+            $prefix = $Text.Substring($cursor, $match.Index - $cursor).Trim()
+            if ($prefix) {
+                $wav = Join-Path $segmentRoot ("$index-prefix.wav")
+                Write-SapiWav $prefix 0 100 $wav
+                $segments.Add($wav)
+                $index++
+            }
+            $target = $match.Value.ToLowerInvariant()
+            # A slower, louder isolated target is an intentional teaching
+            # contrast; no spoken labels are inserted into the learner audio.
+            $wav = Join-Path $segmentRoot ("$index-target.wav")
+            Write-SapiWav $target -3 100 $wav
+            $amplified = Join-Path $segmentRoot ("$index-target-amplified.wav")
+            & $ffmpeg -y -v error -i $wav -af 'volume=1.35' $amplified 2>$null
+            if ($LASTEXITCODE -eq 0 -and (Test-Path -LiteralPath $amplified)) {
+                Move-Item -LiteralPath $amplified -Destination $wav -Force
+            }
+            $segments.Add($wav)
+            $index++
+            $cursor = $match.Index + $match.Length
+        }
+        $suffix = $Text.Substring($cursor).Trim()
+        if ($suffix) {
+            $wav = Join-Path $segmentRoot ("$index-suffix.wav")
+            Write-SapiWav $suffix 0 100 $wav
+            $segments.Add($wav)
+        }
+        if ($segments.Count -eq 0) { return $false }
+        $inputArgs = @()
+        $labels = New-Object System.Collections.Generic.List[string]
+        for ($i = 0; $i -lt $segments.Count; $i++) {
+            $inputArgs += @('-i', $segments[$i])
+            [void]$labels.Add("[$i`:a]")
+        }
+        $filter = (($labels -join '') + "concat=n=$($segments.Count):v=0:a=1[out]")
+        & $ffmpeg -y -v error @inputArgs -filter_complex $filter -map '[out]' -codec:a libmp3lame -q:a 4 $Output 2>$null
+        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $Output)) {
+            throw "FFmpeg could not join stressed segments for $ItemId"
+        }
+        return $true
+    } finally {
+        Remove-Item -LiteralPath $segmentRoot -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}
+
 foreach ($item in $items) {
     $output = Join-Path $CourseRoot $item.file.Replace('/', '\')
-    if ((Test-Path -LiteralPath $output) -and -not $Force) {
+    $hasStress = @(Get-StressMatches ([string]$item.text)).Count -gt 0
+    $contextSpeech = Get-ContextSpeech ([string]$item.text)
+    if ((Test-Path -LiteralPath $output) -and -not $Force -and -not $hasStress) {
         $existing++
         continue
     }
     $wav = Join-Path $TempRoot ("$($item.id).wav")
     $stream = New-Object -ComObject SAPI.SpFileStream
     try {
-        $stream.Open($wav, 3, $false)
-        $voice.AudioOutputStream = $stream
-        [void]$voice.Speak([string]$item.text)
-        $stream.Close()
-        $voice.AudioOutputStream = $null
-        $bounds = Get-TrimBounds $wav
-        & $ffmpeg -y -v error -ss $bounds.Start -t $bounds.Duration -i $wav -codec:a libmp3lame -q:a 4 $output 2>$null
-        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $output)) {
-            throw "FFmpeg could not encode $($item.id)"
+        if ($contextSpeech) {
+            Write-SapiWav $contextSpeech 0 100 $wav
+            $bounds = Get-TrimBounds $wav
+            & $ffmpeg -y -v error -ss $bounds.Start -t $bounds.Duration -i $wav -codec:a libmp3lame -q:a 4 $output 2>$null
+            if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $output)) {
+                throw "FFmpeg could not encode $($item.id)"
+            }
+        } elseif (-not (Convert-StressedToMp3 ([string]$item.text) $output ([string]$item.id))) {
+            Write-SapiWav ([string]$item.text) 0 100 $wav
+            $bounds = Get-TrimBounds $wav
+            & $ffmpeg -y -v error -ss $bounds.Start -t $bounds.Duration -i $wav -codec:a libmp3lame -q:a 4 $output 2>$null
+            if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $output)) {
+                throw "FFmpeg could not encode $($item.id)"
+            }
         }
         $generated++
     } catch {

@@ -127,8 +127,17 @@ def speech_text(value: str) -> str:
     # such as “I’ve” remains one pronounceable word for SAPI.
     normalized_value = value.translate(str.maketrans({"\u2018": "'", "\u2019": "'", "\u201b": "'", "\u02bc": "'"}))
     stripped = normalized_value.strip()
-    if not stripped or re.search(r"[\u4e00-\u9fff]", stripped):
+    if not stripped:
         return ""
+    # Code examples often append a Chinese gloss after the English target,
+    # e.g. `I wanted the BLUE one. （不是红的）`. Keep the English sentence
+    # playable while removing the non-speech gloss; ordinary Chinese prose
+    # still returns empty because it contains no English words below.
+    if re.search(r"[\u4e00-\u9fff]", normalized_value):
+        normalized_value = re.sub(r"[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]+", " ", normalized_value)
+        stripped = normalized_value.strip()
+        if not re.search(r"[A-Za-z]", stripped):
+            return ""
 
     # Choice exercises and stress alternatives do not have one canonical
     # utterance.  Suppressing their buttons is safer than synthesizing both
@@ -227,15 +236,75 @@ def inline_with_standalone_speech(value: str) -> str:
     return f'<span class="pronunciation">{rendered}{listen_button(text)}</span>'
 
 
-def table_cell(value: str, fallback_speech: str = "") -> str:
+def table_cell(value: str, fallback_speech: str = "", fallback_label: str = "") -> str:
     rendered = inline_with_standalone_speech(value)
     if (
         fallback_speech
         and "data-audio=" not in rendered
         and re.search(r"/[^/]+/", value)
     ):
-        return rendered + listen_button(speech_text(fallback_speech))
+        speech = speech_text(fallback_speech)
+        return rendered + listen_button(speech, fallback_label or speech)
     return rendered
+
+
+def table_audio_text(value: str, fallback: str, header: str) -> str:
+    """Choose an audio target for IPA/table annotations.
+
+    A row can contain several IPA renderings of the same English sentence.
+    Playing the first column for every IPA cell makes standard, natural, and
+    stress-marked examples indistinguishable. Keep the visible IPA untouched,
+    but derive a distinct learner-facing speech target for those columns.
+    """
+    if not fallback or not re.search(r"/[^/\r\n]+/", value):
+        return fallback
+    header_folded = header.casefold()
+    annotation = " ".join(re.findall(r"/([^/\r\n]+)/", value))
+    if "自然重音" in header or "重音" in header:
+        # Natural-stress annotations use capitalization inside phonetic words
+        # (NEED, MEETing, təMORrow). Apply those focus marks to the English
+        # fallback so the audio generator can emphasize the matching words.
+        marked = fallback
+        targets = []
+        for token in re.findall(r"[A-Za-z]+(?:['-][A-Za-z]+)*", annotation):
+            upper_count = len(re.findall(r"[A-Z]", token))
+            if upper_count >= 2 and len(token) >= 2:
+                targets.append(token.casefold())
+        for target in targets:
+            pattern = re.compile(rf"\b{re.escape(target)}\b", re.IGNORECASE)
+            marked = pattern.sub(lambda match: match.group(0).upper(), marked, count=1)
+        return marked
+    if "自然" in header_folded:
+        # SAPI tends to read function words in a full form even in a sentence.
+        # Use small pronunciation spellings for the weak natural target.
+        natural = fallback
+        ipa = annotation.replace(" ", "")
+        substitutions = (
+            ("tə", "tuh", r"\bto\b"),
+            ("tu", "two", r"\bto\b"),
+            ("ðə", "thuh", r"\bthe\b"),
+            ("ði", "thee", r"\bthe\b"),
+            ("ən", "uhn", r"\ban\b"),
+            ("kən", "kuhn", r"\bcan\b"),
+            ("kəd", "kuhd", r"\bcould\b"),
+            ("əz", "uhz", r"\bhas\b"),
+            ("əv", "uhv", r"\bhave\b"),
+        )
+        for marker, replacement, word_pattern in substitutions:
+            if marker in ipa:
+                natural = re.sub(word_pattern, replacement, natural, count=1, flags=re.IGNORECASE)
+        return natural
+    if "标准" in header_folded:
+        # Force a clearly full target where the IPA explicitly contains /tu/
+        # or /ði/; this prevents the system voice from silently reducing it.
+        standard = fallback
+        ipa = annotation.replace(" ", "")
+        if "tu" in ipa:
+            standard = re.sub(r"\bto\b", "two", standard, count=1, flags=re.IGNORECASE)
+        if "ði" in ipa:
+            standard = re.sub(r"\bthe\b", "thee", standard, count=1, flags=re.IGNORECASE)
+        return standard
+    return fallback
 
 
 def discover_units() -> list[Unit]:
@@ -363,7 +432,10 @@ def render_markdown(unit: Unit) -> str:
             body_rows = []
             for row in rows[1:]:
                 fallback = row[speech_column] if speech_column is not None and speech_column < len(row) else ""
-                cells = "".join(f"<td>{table_cell(cell, fallback)}</td>" for cell in row)
+                cells = "".join(
+                    f"<td>{table_cell(cell, table_audio_text(cell, fallback, rows[0][index] if index < len(rows[0]) else ''), fallback)}</td>"
+                    for index, cell in enumerate(row)
+                )
                 body_rows.append(f"<tr>{cells}</tr>")
             body = "".join(body_rows)
             output.append(f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>')
@@ -509,7 +581,7 @@ def write_assets(units: list[Unit]) -> None:
     )
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v7";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v8";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});

@@ -857,14 +857,14 @@
       "file": "assets/audio/inline/e1be18997fe64a7c.mp3"
     },
     {
-      "id": "8aad79a924e7a997",
-      "text": "bread and butter",
-      "file": "assets/audio/inline/8aad79a924e7a997.mp3"
-    },
-    {
       "id": "3f622057cbc168f8",
       "text": "Bread and butter",
       "file": "assets/audio/inline/3f622057cbc168f8.mp3"
+    },
+    {
+      "id": "8aad79a924e7a997",
+      "text": "bread and butter",
+      "file": "assets/audio/inline/8aad79a924e7a997.mp3"
     },
     {
       "id": "a87b3e348ccb598e",
@@ -1110,6 +1110,11 @@
       "id": "d9b6a7d5e622f563",
       "text": "Can you send it today",
       "file": "assets/audio/inline/d9b6a7d5e622f563.mp3"
+    },
+    {
+      "id": "a4648d0359e882bc",
+      "text": "Can you SEND it today",
+      "file": "assets/audio/inline/a4648d0359e882bc.mp3"
     },
     {
       "id": "87f71f9ef3d2f9a7",
@@ -1472,14 +1477,14 @@
       "file": "assets/audio/inline/e54e388ff2c08fc9.mp3"
     },
     {
-      "id": "ade802560d534295",
-      "text": "Could you",
-      "file": "assets/audio/inline/ade802560d534295.mp3"
-    },
-    {
       "id": "6db3df9a4b641b8f",
       "text": "could you",
       "file": "assets/audio/inline/6db3df9a4b641b8f.mp3"
+    },
+    {
+      "id": "ade802560d534295",
+      "text": "Could you",
+      "file": "assets/audio/inline/ade802560d534295.mp3"
     },
     {
       "id": "e8e06772430a2d9b",
@@ -2567,6 +2572,11 @@
       "file": "assets/audio/inline/b63459cd2b559643.mp3"
     },
     {
+      "id": "233b2612f7a8d4ce",
+      "text": "For uhn hour",
+      "file": "assets/audio/inline/233b2612f7a8d4ce.mp3"
+    },
+    {
       "id": "5dcc8edfe158c87d",
       "text": "For unexpected problems",
       "file": "assets/audio/inline/5dcc8edfe158c87d.mp3"
@@ -2687,6 +2697,11 @@
       "file": "assets/audio/inline/80bcbde4e5584bec.mp3"
     },
     {
+      "id": "f9d4e7ec6b916b75",
+      "text": "Give him thuh key",
+      "file": "assets/audio/inline/f9d4e7ec6b916b75.mp3"
+    },
+    {
       "id": "bf4e6de541a9a771",
       "text": "give me",
       "file": "assets/audio/inline/bf4e6de541a9a771.mp3"
@@ -2772,14 +2787,14 @@
       "file": "assets/audio/inline/eedd5a8aa93243c7.mp3"
     },
     {
-      "id": "0f1061d49969d7d4",
-      "text": "Go out",
-      "file": "assets/audio/inline/0f1061d49969d7d4.mp3"
-    },
-    {
       "id": "78e1c89057739afe",
       "text": "go out",
       "file": "assets/audio/inline/78e1c89057739afe.mp3"
+    },
+    {
+      "id": "0f1061d49969d7d4",
+      "text": "Go out",
+      "file": "assets/audio/inline/0f1061d49969d7d4.mp3"
     },
     {
       "id": "2e0bef65085e28da",
@@ -2937,6 +2952,11 @@
       "file": "assets/audio/inline/2c9f6f9e513d3255.mp3"
     },
     {
+      "id": "3d43b9e03af87ab3",
+      "text": "Have uhn idea",
+      "file": "assets/audio/inline/3d43b9e03af87ab3.mp3"
+    },
+    {
       "id": "dd081ccfe737634d",
       "text": "Have you ever tried it",
       "file": "assets/audio/inline/dd081ccfe737634d.mp3"
@@ -3027,9 +3047,19 @@
       "file": "assets/audio/inline/8ad378bc1c654b3c.mp3"
     },
     {
+      "id": "6c97c298e18d3e93",
+      "text": "He uhz already left",
+      "file": "assets/audio/inline/6c97c298e18d3e93.mp3"
+    },
+    {
       "id": "14d7cf3cd4edd660",
       "text": "He work here",
       "file": "assets/audio/inline/14d7cf3cd4edd660.mp3"
+    },
+    {
+      "id": "03318a20614ab25b",
+      "text": "He work works",
+      "file": "assets/audio/inline/03318a20614ab25b.mp3"
     },
     {
       "id": "d0a9bed005d4d126",
@@ -3080,6 +3110,11 @@
       "id": "26cc4760c918d12e",
       "text": "Here are the keys",
       "file": "assets/audio/inline/26cc4760c918d12e.mp3"
+    },
+    {
+      "id": "67d8030212fe885d",
+      "text": "Here are thuh keys",
+      "file": "assets/audio/inline/67d8030212fe885d.mp3"
     },
     {
       "id": "be026e64c2dd38a8",
@@ -3312,14 +3347,14 @@
       "file": "assets/audio/inline/8bb52d8eb0b87a7b.mp3"
     },
     {
-      "id": "87791fb5b5c3fdf7",
-      "text": "However",
-      "file": "assets/audio/inline/87791fb5b5c3fdf7.mp3"
-    },
-    {
       "id": "47951833ecf62117",
       "text": "however",
       "file": "assets/audio/inline/47951833ecf62117.mp3"
+    },
+    {
+      "id": "87791fb5b5c3fdf7",
+      "text": "However",
+      "file": "assets/audio/inline/87791fb5b5c3fdf7.mp3"
     },
     {
       "id": "b5e98361e7ed0437",
@@ -3552,6 +3587,11 @@
       "file": "assets/audio/inline/d4c0bf958a9d3779.mp3"
     },
     {
+      "id": "7b789838988799d2",
+      "text": "I CALLED you this MORNING",
+      "file": "assets/audio/inline/7b789838988799d2.mp3"
+    },
+    {
       "id": "4969dcce49a0c197",
       "text": "I called you this morning",
       "file": "assets/audio/inline/4969dcce49a0c197.mp3"
@@ -3560,6 +3600,16 @@
       "id": "a289dbc33cc177cc",
       "text": "I came to help",
       "file": "assets/audio/inline/a289dbc33cc177cc.mp3"
+    },
+    {
+      "id": "24c8a544b303dda5",
+      "text": "I came tuh help",
+      "file": "assets/audio/inline/24c8a544b303dda5.mp3"
+    },
+    {
+      "id": "e9fba8497cc91586",
+      "text": "I came two help",
+      "file": "assets/audio/inline/e9fba8497cc91586.mp3"
     },
     {
       "id": "53ace8f46827fce4",
@@ -3710,6 +3760,11 @@
       "id": "7f76648821c5aca2",
       "text": "I didn't go",
       "file": "assets/audio/inline/7f76648821c5aca2.mp3"
+    },
+    {
+      "id": "e8fbc19cf83543fb",
+      "text": "I DIDN'T SAY that",
+      "file": "assets/audio/inline/e8fbc19cf83543fb.mp3"
     },
     {
       "id": "69e7732fa23e44d4",
@@ -4067,6 +4122,16 @@
       "file": "assets/audio/inline/8d5c3d26c51c6af4.mp3"
     },
     {
+      "id": "eee21cf5d3d2e3cb",
+      "text": "I kuhd help",
+      "file": "assets/audio/inline/eee21cf5d3d2e3cb.mp3"
+    },
+    {
+      "id": "985f041b1ac84d7d",
+      "text": "I kuhn help",
+      "file": "assets/audio/inline/985f041b1ac84d7d.mp3"
+    },
+    {
       "id": "b7a10d0bfd79cb88",
       "text": "I left early because traffic was heavy",
       "file": "assets/audio/inline/b7a10d0bfd79cb88.mp3"
@@ -4192,6 +4257,11 @@
       "file": "assets/audio/inline/b93e2243c5a3fb97.mp3"
     },
     {
+      "id": "4d59fd8fe7e55b0f",
+      "text": "I NEED a BREAK",
+      "file": "assets/audio/inline/4d59fd8fe7e55b0f.mp3"
+    },
+    {
       "id": "c69392d51052b84e",
       "text": "I need a little time",
       "file": "assets/audio/inline/c69392d51052b84e.mp3"
@@ -4237,6 +4307,11 @@
       "file": "assets/audio/inline/792dbc828de36133.mp3"
     },
     {
+      "id": "fe07eae77db25cd7",
+      "text": "I NEED the REPORT today",
+      "file": "assets/audio/inline/fe07eae77db25cd7.mp3"
+    },
+    {
       "id": "99eba2c94d4e0420",
       "text": "I need the report today",
       "file": "assets/audio/inline/99eba2c94d4e0420.mp3"
@@ -4272,9 +4347,19 @@
       "file": "assets/audio/inline/31acea0cc0452f1b.mp3"
     },
     {
+      "id": "8374ef01a4ee9f63",
+      "text": "I only NEED one more MINUTE",
+      "file": "assets/audio/inline/8374ef01a4ee9f63.mp3"
+    },
+    {
       "id": "62bdde041c1bd1f0",
       "text": "I opened the door and turned on the light",
       "file": "assets/audio/inline/62bdde041c1bd1f0.mp3"
+    },
+    {
+      "id": "6b7b2677633b3dd4",
+      "text": "I ORDERED a COFFEE",
+      "file": "assets/audio/inline/6b7b2677633b3dd4.mp3"
     },
     {
       "id": "4e4a423298331391",
@@ -4437,6 +4522,11 @@
       "file": "assets/audio/inline/ffe1271859f61d0d.mp3"
     },
     {
+      "id": "8cf24bc60cf8085b",
+      "text": "I should uhv called",
+      "file": "assets/audio/inline/8cf24bc60cf8085b.mp3"
+    },
+    {
       "id": "14d3dd3333f6336d",
       "text": "I stayed home because I was sick",
       "file": "assets/audio/inline/14d3dd3333f6336d.mp3"
@@ -4482,14 +4572,19 @@
       "file": "assets/audio/inline/07f2d6f0e04c37d3.mp3"
     },
     {
+      "id": "ac5d777c1f66a8a3",
+      "text": "I THOUGHT you KNEW",
+      "file": "assets/audio/inline/ac5d777c1f66a8a3.mp3"
+    },
+    {
       "id": "f3d39c5f4290d744",
       "text": "I thought you knew",
       "file": "assets/audio/inline/f3d39c5f4290d744.mp3"
     },
     {
-      "id": "ac5d777c1f66a8a3",
-      "text": "I THOUGHT you KNEW",
-      "file": "assets/audio/inline/ac5d777c1f66a8a3.mp3"
+      "id": "70101ada6ecf493e",
+      "text": "I THOUGHT you were BUSY",
+      "file": "assets/audio/inline/70101ada6ecf493e.mp3"
     },
     {
       "id": "d450fee8a8ce8b5b",
@@ -4500,6 +4595,16 @@
       "id": "00406128092c1ff6",
       "text": "I told you",
       "file": "assets/audio/inline/00406128092c1ff6.mp3"
+    },
+    {
+      "id": "9e3b8c150238733c",
+      "text": "I uhv finished",
+      "file": "assets/audio/inline/9e3b8c150238733c.mp3"
+    },
+    {
+      "id": "e9e2d826fe646439",
+      "text": "I uhv uhn idea",
+      "file": "assets/audio/inline/e9e2d826fe646439.mp3"
     },
     {
       "id": "ffe6054c0ec818b7",
@@ -4567,9 +4672,34 @@
       "file": "assets/audio/inline/5ca5b651816a526a.mp3"
     },
     {
+      "id": "ec9d6e3ddcf5021f",
+      "text": "I want tuh go",
+      "file": "assets/audio/inline/ec9d6e3ddcf5021f.mp3"
+    },
+    {
+      "id": "5adcc2c035d1ed5d",
+      "text": "I want two go",
+      "file": "assets/audio/inline/5adcc2c035d1ed5d.mp3"
+    },
+    {
       "id": "2702181639b10a0b",
       "text": "I want you send",
       "file": "assets/audio/inline/2702181639b10a0b.mp3"
+    },
+    {
+      "id": "79abddc5599aa5ed",
+      "text": "I wanted the blue ONE",
+      "file": "assets/audio/inline/79abddc5599aa5ed.mp3"
+    },
+    {
+      "id": "f4d223e51b1349f2",
+      "text": "I wanted the BLUE one",
+      "file": "assets/audio/inline/f4d223e51b1349f2.mp3"
+    },
+    {
+      "id": "03659bca53299392",
+      "text": "I WANTED the blue one",
+      "file": "assets/audio/inline/03659bca53299392.mp3"
     },
     {
       "id": "38eaeac709288aa7",
@@ -4765,6 +4895,16 @@
       "id": "b35abc844f3716a9",
       "text": "I'd like to request a refund please",
       "file": "assets/audio/inline/b35abc844f3716a9.mp3"
+    },
+    {
+      "id": "fb5bb109f25901eb",
+      "text": "I'd like tuh ask",
+      "file": "assets/audio/inline/fb5bb109f25901eb.mp3"
+    },
+    {
+      "id": "5cd2d486d8c69fa0",
+      "text": "I'd like two ask",
+      "file": "assets/audio/inline/5cd2d486d8c69fa0.mp3"
     },
     {
       "id": "71f7bbebeb838a44",
@@ -4972,14 +5112,14 @@
       "file": "assets/audio/inline/4c24763992e1ace9.mp3"
     },
     {
-      "id": "505cff70937ab82a",
-      "text": "I'm REAdy",
-      "file": "assets/audio/inline/505cff70937ab82a.mp3"
-    },
-    {
       "id": "d5b0500ea0e6dcaf",
       "text": "I'm ready",
       "file": "assets/audio/inline/d5b0500ea0e6dcaf.mp3"
+    },
+    {
+      "id": "505cff70937ab82a",
+      "text": "I'm REAdy",
+      "file": "assets/audio/inline/505cff70937ab82a.mp3"
     },
     {
       "id": "08d40062629e23e2",
@@ -5125,6 +5265,11 @@
       "id": "b54532a7e208a940",
       "text": "improve a skill improve at",
       "file": "assets/audio/inline/b54532a7e208a940.mp3"
+    },
+    {
+      "id": "cc3ee57220d75339",
+      "text": "improve at",
+      "file": "assets/audio/inline/cc3ee57220d75339.mp3"
     },
     {
       "id": "27ca47e9e10d8743",
@@ -5402,6 +5547,16 @@
       "file": "assets/audio/inline/63bee069d0b4dfd3.mp3"
     },
     {
+      "id": "c16d2ce2c11ee0f8",
+      "text": "It took uhn hour",
+      "file": "assets/audio/inline/c16d2ce2c11ee0f8.mp3"
+    },
+    {
+      "id": "925dfe508a47b949",
+      "text": "It uhz changed",
+      "file": "assets/audio/inline/925dfe508a47b949.mp3"
+    },
+    {
       "id": "c0a0f52f778fa251",
       "text": "It was bad",
       "file": "assets/audio/inline/c0a0f52f778fa251.mp3"
@@ -5545,6 +5700,26 @@
       "id": "2e20ca63f528db6d",
       "text": "Kind of busy",
       "file": "assets/audio/inline/2e20ca63f528db6d.mp3"
+    },
+    {
+      "id": "16670324b897aa8d",
+      "text": "kuhd I ask a question",
+      "file": "assets/audio/inline/16670324b897aa8d.mp3"
+    },
+    {
+      "id": "82dd9f90c8e2beef",
+      "text": "kuhd you wait",
+      "file": "assets/audio/inline/82dd9f90c8e2beef.mp3"
+    },
+    {
+      "id": "0b1663771efae8e2",
+      "text": "kuhn we start",
+      "file": "assets/audio/inline/0b1663771efae8e2.mp3"
+    },
+    {
+      "id": "625ca40a517501d5",
+      "text": "kuhn you help",
+      "file": "assets/audio/inline/625ca40a517501d5.mp3"
     },
     {
       "id": "d93244e7b08131ef",
@@ -5767,6 +5942,11 @@
       "file": "assets/audio/inline/73c3ded46aaf5791.mp3"
     },
     {
+      "id": "e3390bd15b5b81bc",
+      "text": "Let's TALK about the PROBLEM",
+      "file": "assets/audio/inline/e3390bd15b5b81bc.mp3"
+    },
+    {
       "id": "3be37c884e0b554c",
       "text": "Let's talk about the problem",
       "file": "assets/audio/inline/3be37c884e0b554c.mp3"
@@ -5882,6 +6062,11 @@
       "file": "assets/audio/inline/8185ce33223ddb24.mp3"
     },
     {
+      "id": "8bdb3fa4a0328afe",
+      "text": "Look at thee end",
+      "file": "assets/audio/inline/8bdb3fa4a0328afe.mp3"
+    },
+    {
       "id": "fd25ad169e2405dc",
       "text": "Look at those clouds It's going to rain",
       "file": "assets/audio/inline/fd25ad169e2405dc.mp3"
@@ -5975,6 +6160,11 @@
       "id": "89059909fb111819",
       "text": "make progress",
       "file": "assets/audio/inline/89059909fb111819.mp3"
+    },
+    {
+      "id": "8e2fc166da484293",
+      "text": "Make uhn appointment",
+      "file": "assets/audio/inline/8e2fc166da484293.mp3"
     },
     {
       "id": "febb9f32c94e238e",
@@ -6372,6 +6562,11 @@
       "file": "assets/audio/inline/e857b90d36b6f0c9.mp3"
     },
     {
+      "id": "20ab9dd20fdd36ce",
+      "text": "Near thee airport",
+      "file": "assets/audio/inline/20ab9dd20fdd36ce.mp3"
+    },
+    {
       "id": "71ed8bd8993d761c",
       "text": "nearby",
       "file": "assets/audio/inline/71ed8bd8993d761c.mp3"
@@ -6452,14 +6647,24 @@
       "file": "assets/audio/inline/97f9de20729b1401.mp3"
     },
     {
-      "id": "9390298f3fb0c5b1",
-      "text": "no",
-      "file": "assets/audio/inline/9390298f3fb0c5b1.mp3"
+      "id": "e345201db058e52c",
+      "text": "Nice tuh meet you",
+      "file": "assets/audio/inline/e345201db058e52c.mp3"
+    },
+    {
+      "id": "0e78d4f0a79ae947",
+      "text": "Nice two meet you",
+      "file": "assets/audio/inline/0e78d4f0a79ae947.mp3"
     },
     {
       "id": "1ea442a134b2a184",
       "text": "No",
       "file": "assets/audio/inline/1ea442a134b2a184.mp3"
+    },
+    {
+      "id": "9390298f3fb0c5b1",
+      "text": "no",
+      "file": "assets/audio/inline/9390298f3fb0c5b1.mp3"
     },
     {
       "id": "b0a9f1435025cfa3",
@@ -6737,14 +6942,14 @@
       "file": "assets/audio/inline/0dd1b6d5c52eec73.mp3"
     },
     {
-      "id": "b2cbb9f401f04d09",
-      "text": "perMIT",
-      "file": "assets/audio/inline/b2cbb9f401f04d09.mp3"
-    },
-    {
       "id": "9b9fe50eaebc4787",
       "text": "PERmit",
       "file": "assets/audio/inline/9b9fe50eaebc4787.mp3"
+    },
+    {
+      "id": "b2cbb9f401f04d09",
+      "text": "perMIT",
+      "file": "assets/audio/inline/b2cbb9f401f04d09.mp3"
     },
     {
       "id": "ccce8ebf9e988b7c",
@@ -6917,6 +7122,11 @@
       "file": "assets/audio/inline/9b8912770290dfaf.mp3"
     },
     {
+      "id": "cdd5eea7c329f36a",
+      "text": "Please PUT it on the DESK",
+      "file": "assets/audio/inline/cdd5eea7c329f36a.mp3"
+    },
+    {
       "id": "c8fea4caa4fbe013",
       "text": "Please record the meeting",
       "file": "assets/audio/inline/c8fea4caa4fbe013.mp3"
@@ -7042,14 +7252,14 @@
       "file": "assets/audio/inline/6f148dda394b81e3.mp3"
     },
     {
-      "id": "24a1305f21317764",
-      "text": "preSENT",
-      "file": "assets/audio/inline/24a1305f21317764.mp3"
-    },
-    {
       "id": "1b93c30ecbedfb46",
       "text": "PREsent",
       "file": "assets/audio/inline/1b93c30ecbedfb46.mp3"
+    },
+    {
+      "id": "24a1305f21317764",
+      "text": "preSENT",
+      "file": "assets/audio/inline/24a1305f21317764.mp3"
     },
     {
       "id": "77049f6f8893dd97",
@@ -7137,14 +7347,14 @@
       "file": "assets/audio/inline/7048dc8aa7663e71.mp3"
     },
     {
-      "id": "e3ecde0709654c80",
-      "text": "put it away",
-      "file": "assets/audio/inline/e3ecde0709654c80.mp3"
-    },
-    {
       "id": "9775988d0de5c0c4",
       "text": "Put it away",
       "file": "assets/audio/inline/9775988d0de5c0c4.mp3"
+    },
+    {
+      "id": "e3ecde0709654c80",
+      "text": "put it away",
+      "file": "assets/audio/inline/e3ecde0709654c80.mp3"
     },
     {
       "id": "23b3884eafad6033",
@@ -7197,14 +7407,14 @@
       "file": "assets/audio/inline/5540034d4b4e0737.mp3"
     },
     {
-      "id": "0309edce528722c2",
-      "text": "REAlly",
-      "file": "assets/audio/inline/0309edce528722c2.mp3"
-    },
-    {
       "id": "09d59056b1228132",
       "text": "Really",
       "file": "assets/audio/inline/09d59056b1228132.mp3"
+    },
+    {
+      "id": "0309edce528722c2",
+      "text": "REAlly",
+      "file": "assets/audio/inline/0309edce528722c2.mp3"
     },
     {
       "id": "9c7cd48ff383e2bc",
@@ -7232,9 +7442,9 @@
       "file": "assets/audio/inline/dbfe937585b4147c.mp3"
     },
     {
-      "id": "70ce871f8a3d3fb4",
-      "text": "record",
-      "file": "assets/audio/inline/70ce871f8a3d3fb4.mp3"
+      "id": "5f53fe01f5c95ba0",
+      "text": "REcord",
+      "file": "assets/audio/inline/5f53fe01f5c95ba0.mp3"
     },
     {
       "id": "7c97d578fa30a83b",
@@ -7242,9 +7452,9 @@
       "file": "assets/audio/inline/7c97d578fa30a83b.mp3"
     },
     {
-      "id": "5f53fe01f5c95ba0",
-      "text": "REcord",
-      "file": "assets/audio/inline/5f53fe01f5c95ba0.mp3"
+      "id": "70ce871f8a3d3fb4",
+      "text": "record",
+      "file": "assets/audio/inline/70ce871f8a3d3fb4.mp3"
     },
     {
       "id": "ec3915f542e0f8cb",
@@ -7612,14 +7822,14 @@
       "file": "assets/audio/inline/7c8e686941933cf0.mp3"
     },
     {
-      "id": "90eb7554daf505ec",
-      "text": "See it",
-      "file": "assets/audio/inline/90eb7554daf505ec.mp3"
-    },
-    {
       "id": "f1136c1c4e28a8c3",
       "text": "see it",
       "file": "assets/audio/inline/f1136c1c4e28a8c3.mp3"
+    },
+    {
+      "id": "90eb7554daf505ec",
+      "text": "See it",
+      "file": "assets/audio/inline/90eb7554daf505ec.mp3"
     },
     {
       "id": "4a228e7e27915712",
@@ -7767,6 +7977,11 @@
       "file": "assets/audio/inline/07182f39362be1cb.mp3"
     },
     {
+      "id": "1ca892582833e94b",
+      "text": "She BOUGHT the TICKETS ONLINE",
+      "file": "assets/audio/inline/1ca892582833e94b.mp3"
+    },
+    {
       "id": "f32db7f3391441a6",
       "text": "She bought the tickets online",
       "file": "assets/audio/inline/f32db7f3391441a6.mp3"
@@ -7907,6 +8122,11 @@
       "file": "assets/audio/inline/574fc60613c37ce0.mp3"
     },
     {
+      "id": "6818f615eb183227",
+      "text": "She is uhn engineer",
+      "file": "assets/audio/inline/6818f615eb183227.mp3"
+    },
+    {
       "id": "92e907bd60558d3c",
       "text": "She isn't ready",
       "file": "assets/audio/inline/92e907bd60558d3c.mp3"
@@ -7927,9 +8147,19 @@
       "file": "assets/audio/inline/bd3b5a96e4862614.mp3"
     },
     {
+      "id": "76e6ba20fdaf1ef5",
+      "text": "She SENT me the ADDRESS",
+      "file": "assets/audio/inline/76e6ba20fdaf1ef5.mp3"
+    },
+    {
       "id": "3eda8021da83a321",
       "text": "She sent me the address",
       "file": "assets/audio/inline/3eda8021da83a321.mp3"
+    },
+    {
+      "id": "98ce2a17c854d759",
+      "text": "She sent me thee address",
+      "file": "assets/audio/inline/98ce2a17c854d759.mp3"
     },
     {
       "id": "3d7c23f75759f9bd",
@@ -7947,9 +8177,29 @@
       "file": "assets/audio/inline/7d6d640df097e824.mp3"
     },
     {
+      "id": "9c34473df966304d",
+      "text": "She uhz a car",
+      "file": "assets/audio/inline/9c34473df966304d.mp3"
+    },
+    {
+      "id": "ddf2d113652360ca",
+      "text": "She uhz been here",
+      "file": "assets/audio/inline/ddf2d113652360ca.mp3"
+    },
+    {
       "id": "9280905d2bdbd2ec",
       "text": "She wants to know",
       "file": "assets/audio/inline/9280905d2bdbd2ec.mp3"
+    },
+    {
+      "id": "4e342f4145fe6e8f",
+      "text": "She wants tuh know",
+      "file": "assets/audio/inline/4e342f4145fe6e8f.mp3"
+    },
+    {
+      "id": "a6e5237bf4c39a17",
+      "text": "She wants two know",
+      "file": "assets/audio/inline/a6e5237bf4c39a17.mp3"
     },
     {
       "id": "ffa374ac58a26683",
@@ -8117,14 +8367,14 @@
       "file": "assets/audio/inline/971fa55cfccf2558.mp3"
     },
     {
-      "id": "a1d9890884c1b4b9",
-      "text": "so",
-      "file": "assets/audio/inline/a1d9890884c1b4b9.mp3"
-    },
-    {
       "id": "fb1df1a24e3f6a12",
       "text": "So",
       "file": "assets/audio/inline/fb1df1a24e3f6a12.mp3"
+    },
+    {
+      "id": "a1d9890884c1b4b9",
+      "text": "so",
+      "file": "assets/audio/inline/a1d9890884c1b4b9.mp3"
     },
     {
       "id": "29aa1f5f41975bb9",
@@ -8457,14 +8707,14 @@
       "file": "assets/audio/inline/a9f74d1ec36ebdeb.mp3"
     },
     {
-      "id": "f3087a380b12249f",
-      "text": "Tea or coffee",
-      "file": "assets/audio/inline/f3087a380b12249f.mp3"
-    },
-    {
       "id": "8daab59d04da6cd3",
       "text": "TEA or COFfee",
       "file": "assets/audio/inline/8daab59d04da6cd3.mp3"
+    },
+    {
+      "id": "f3087a380b12249f",
+      "text": "Tea or coffee",
+      "file": "assets/audio/inline/f3087a380b12249f.mp3"
     },
     {
       "id": "1057a9604e04b274",
@@ -8485,6 +8735,11 @@
       "id": "df534f8c79263296",
       "text": "Tell her the news",
       "file": "assets/audio/inline/df534f8c79263296.mp3"
+    },
+    {
+      "id": "4fdbbe8156253bda",
+      "text": "Tell her thuh news",
+      "file": "assets/audio/inline/4fdbbe8156253bda.mp3"
     },
     {
       "id": "2c73ebb507169c6f",
@@ -8602,6 +8857,11 @@
       "file": "assets/audio/inline/d97421872ceccc55.mp3"
     },
     {
+      "id": "cc47692e9b0fae52",
+      "text": "That SOUNDS like a good IDEA",
+      "file": "assets/audio/inline/cc47692e9b0fae52.mp3"
+    },
+    {
       "id": "0c0b7091debe073d",
       "text": "That sounds like a good idea",
       "file": "assets/audio/inline/0c0b7091debe073d.mp3"
@@ -8645,6 +8905,11 @@
       "id": "d0c3b92a9d73a9b0",
       "text": "The answer is clear",
       "file": "assets/audio/inline/d0c3b92a9d73a9b0.mp3"
+    },
+    {
+      "id": "9b7991f3ccf1d905",
+      "text": "The answer is in the EMAIL",
+      "file": "assets/audio/inline/9b7991f3ccf1d905.mp3"
     },
     {
       "id": "5318a23c8b5120d2",
@@ -9202,6 +9467,11 @@
       "file": "assets/audio/inline/995034ead2ff637a.mp3"
     },
     {
+      "id": "a8d95968a24283d4",
+      "text": "The TRAIN LEAVES at SIX",
+      "file": "assets/audio/inline/a8d95968a24283d4.mp3"
+    },
+    {
       "id": "6ecd52bc8c5cdb49",
       "text": "The train was delayed by minutes",
       "file": "assets/audio/inline/6ecd52bc8c5cdb49.mp3"
@@ -9212,14 +9482,24 @@
       "file": "assets/audio/inline/33bc0e0ee809ec3c.mp3"
     },
     {
-      "id": "21af6f1260f927f5",
-      "text": "then",
-      "file": "assets/audio/inline/21af6f1260f927f5.mp3"
+      "id": "dae6339f92943177",
+      "text": "thee answer is clear",
+      "file": "assets/audio/inline/dae6339f92943177.mp3"
+    },
+    {
+      "id": "c01cdffb8e464051",
+      "text": "thee answer is in the email",
+      "file": "assets/audio/inline/c01cdffb8e464051.mp3"
     },
     {
       "id": "0597f441dcca7c9b",
       "text": "Then",
       "file": "assets/audio/inline/0597f441dcca7c9b.mp3"
+    },
+    {
+      "id": "21af6f1260f927f5",
+      "text": "then",
+      "file": "assets/audio/inline/21af6f1260f927f5.mp3"
     },
     {
       "id": "8b2d99e18f21c4db",
@@ -9282,14 +9562,14 @@
       "file": "assets/audio/inline/adf88e95f24e50fc.mp3"
     },
     {
-      "id": "690a67b3656547be",
-      "text": "Therefore",
-      "file": "assets/audio/inline/690a67b3656547be.mp3"
-    },
-    {
       "id": "bae0db182974fd46",
       "text": "therefore",
       "file": "assets/audio/inline/bae0db182974fd46.mp3"
+    },
+    {
+      "id": "690a67b3656547be",
+      "text": "Therefore",
+      "file": "assets/audio/inline/690a67b3656547be.mp3"
     },
     {
       "id": "028b41b7552b7af2",
@@ -9332,6 +9612,16 @@
       "file": "assets/audio/inline/8522690c6199bc37.mp3"
     },
     {
+      "id": "a1317d6bfcdabf25",
+      "text": "They kuhd be late",
+      "file": "assets/audio/inline/a1317d6bfcdabf25.mp3"
+    },
+    {
+      "id": "8cea888feeba2ea9",
+      "text": "They kuhn wait",
+      "file": "assets/audio/inline/8cea888feeba2ea9.mp3"
+    },
+    {
       "id": "c17f5a3dd2766cbb",
       "text": "They made me nervous",
       "file": "assets/audio/inline/c17f5a3dd2766cbb.mp3"
@@ -9340,6 +9630,11 @@
       "id": "9be3dbfb962f335c",
       "text": "they save travel time",
       "file": "assets/audio/inline/9be3dbfb962f335c.mp3"
+    },
+    {
+      "id": "e14b284faea2d028",
+      "text": "They uhv arrived",
+      "file": "assets/audio/inline/e14b284faea2d028.mp3"
     },
     {
       "id": "8d02736e13c94ca8",
@@ -9537,6 +9832,21 @@
       "file": "assets/audio/inline/938dec0ba772ecc9.mp3"
     },
     {
+      "id": "9431856834e5839a",
+      "text": "thuh book is here",
+      "file": "assets/audio/inline/9431856834e5839a.mp3"
+    },
+    {
+      "id": "b76fcca228b2fae5",
+      "text": "thuh car is new",
+      "file": "assets/audio/inline/b76fcca228b2fae5.mp3"
+    },
+    {
+      "id": "3230c4f48c10989d",
+      "text": "thuh door is open",
+      "file": "assets/audio/inline/3230c4f48c10989d.mp3"
+    },
+    {
       "id": "e2e825d63dd97ad0",
       "text": "Thursday morning",
       "file": "assets/audio/inline/e2e825d63dd97ad0.mp3"
@@ -9560,6 +9870,16 @@
       "id": "3180cf578c84b32d",
       "text": "Time to go",
       "file": "assets/audio/inline/3180cf578c84b32d.mp3"
+    },
+    {
+      "id": "18e2e52d37b4abc4",
+      "text": "Time tuh go",
+      "file": "assets/audio/inline/18e2e52d37b4abc4.mp3"
+    },
+    {
+      "id": "bcc98416e5e22f64",
+      "text": "Time two go",
+      "file": "assets/audio/inline/bcc98416e5e22f64.mp3"
     },
     {
       "id": "c405760daf9bc32b",
@@ -9667,6 +9987,16 @@
       "file": "assets/audio/inline/dbed0769c538c3cc.mp3"
     },
     {
+      "id": "14dc3327cacdb8a9",
+      "text": "Try tuh relax",
+      "file": "assets/audio/inline/14dc3327cacdb8a9.mp3"
+    },
+    {
+      "id": "562e405cce972836",
+      "text": "Try two relax",
+      "file": "assets/audio/inline/562e405cce972836.mp3"
+    },
+    {
       "id": "c6f0527acdfbc6de",
       "text": "turn back",
       "file": "assets/audio/inline/c6f0527acdfbc6de.mp3"
@@ -9677,14 +10007,14 @@
       "file": "assets/audio/inline/75d1c6b8dc8bfc56.mp3"
     },
     {
-      "id": "b83dd29b41484589",
-      "text": "turn it off",
-      "file": "assets/audio/inline/b83dd29b41484589.mp3"
-    },
-    {
       "id": "74039ed531a5de4d",
       "text": "Turn it off",
       "file": "assets/audio/inline/74039ed531a5de4d.mp3"
+    },
+    {
+      "id": "b83dd29b41484589",
+      "text": "turn it off",
+      "file": "assets/audio/inline/b83dd29b41484589.mp3"
     },
     {
       "id": "e679ca0953315c31",
@@ -9722,14 +10052,19 @@
       "file": "assets/audio/inline/14a0921a7fbb1a03.mp3"
     },
     {
+      "id": "c2f0fe91bfafdc03",
+      "text": "Two eggs",
+      "file": "assets/audio/inline/c2f0fe91bfafdc03.mp3"
+    },
+    {
       "id": "ed0ce49e712be0ce",
       "text": "two eggs",
       "file": "assets/audio/inline/ed0ce49e712be0ce.mp3"
     },
     {
-      "id": "c2f0fe91bfafdc03",
-      "text": "Two eggs",
-      "file": "assets/audio/inline/c2f0fe91bfafdc03.mp3"
+      "id": "317c02365f6129e3",
+      "text": "uhn apple please",
+      "file": "assets/audio/inline/317c02365f6129e3.mp3"
     },
     {
       "id": "ba691ba042bcedd9",
@@ -9857,14 +10192,14 @@
       "file": "assets/audio/inline/1466bbc5a3dcbd6f.mp3"
     },
     {
-      "id": "a9d30fb1a665f86e",
-      "text": "Want to",
-      "file": "assets/audio/inline/a9d30fb1a665f86e.mp3"
-    },
-    {
       "id": "a20eab33b7b874fd",
       "text": "want to",
       "file": "assets/audio/inline/a20eab33b7b874fd.mp3"
+    },
+    {
+      "id": "a9d30fb1a665f86e",
+      "text": "Want to",
+      "file": "assets/audio/inline/a9d30fb1a665f86e.mp3"
     },
     {
       "id": "9091a2d748bbc02e",
@@ -9912,14 +10247,14 @@
       "file": "assets/audio/inline/7bef4f3cac0a5f10.mp3"
     },
     {
-      "id": "f3fe997b8d1ce818",
-      "text": "We",
-      "file": "assets/audio/inline/f3fe997b8d1ce818.mp3"
-    },
-    {
       "id": "dc7c811b9561739d",
       "text": "we",
       "file": "assets/audio/inline/dc7c811b9561739d.mp3"
+    },
+    {
+      "id": "f3fe997b8d1ce818",
+      "text": "We",
+      "file": "assets/audio/inline/f3fe997b8d1ce818.mp3"
     },
     {
       "id": "7ef6647b2074cf56",
@@ -9970,6 +10305,11 @@
       "id": "6a98ab50affe06b3",
       "text": "We can meet after work",
       "file": "assets/audio/inline/6a98ab50affe06b3.mp3"
+    },
+    {
+      "id": "64e143035ad21eb9",
+      "text": "We can MEET after WORK",
+      "file": "assets/audio/inline/64e143035ad21eb9.mp3"
     },
     {
       "id": "80135f101c5eacb5",
@@ -10067,6 +10407,11 @@
       "file": "assets/audio/inline/2f59b89ffe90a406.mp3"
     },
     {
+      "id": "87ce34345b2b6324",
+      "text": "We have a MEETING tomorrow",
+      "file": "assets/audio/inline/87ce34345b2b6324.mp3"
+    },
+    {
       "id": "15b615d3ff836ced",
       "text": "We have finished",
       "file": "assets/audio/inline/15b615d3ff836ced.mp3"
@@ -10085,6 +10430,16 @@
       "id": "b02720d87eae6902",
       "text": "We have seen it",
       "file": "assets/audio/inline/b02720d87eae6902.mp3"
+    },
+    {
+      "id": "323dac24125fe543",
+      "text": "We kuhd try again",
+      "file": "assets/audio/inline/323dac24125fe543.mp3"
+    },
+    {
+      "id": "373a6eb7fe9c3e94",
+      "text": "We kuhn do it",
+      "file": "assets/audio/inline/373a6eb7fe9c3e94.mp3"
     },
     {
       "id": "4788e61338c92e16",
@@ -10137,6 +10492,16 @@
       "file": "assets/audio/inline/16bd67fcbb1053a8.mp3"
     },
     {
+      "id": "1d8a0e2cfe4c7b36",
+      "text": "We need tuh talk",
+      "file": "assets/audio/inline/1d8a0e2cfe4c7b36.mp3"
+    },
+    {
+      "id": "2934bb6a2e667590",
+      "text": "We need two talk",
+      "file": "assets/audio/inline/2934bb6a2e667590.mp3"
+    },
+    {
       "id": "b39d858511d7c34f",
       "text": "We postponed the meeting until Monday",
       "file": "assets/audio/inline/b39d858511d7c34f.mp3"
@@ -10155,6 +10520,16 @@
       "id": "d8499abab0f373c5",
       "text": "We should leave before noon",
       "file": "assets/audio/inline/d8499abab0f373c5.mp3"
+    },
+    {
+      "id": "996f9d0e53a84d38",
+      "text": "We should LEAVE before NOON",
+      "file": "assets/audio/inline/996f9d0e53a84d38.mp3"
+    },
+    {
+      "id": "fa767c8c22cce98c",
+      "text": "We uhv seen it",
+      "file": "assets/audio/inline/fa767c8c22cce98c.mp3"
     },
     {
       "id": "1febae48347af639",
@@ -10492,6 +10867,11 @@
       "file": "assets/audio/inline/4d71b30fad2bb9ce.mp3"
     },
     {
+      "id": "23dc58b1b5472202",
+      "text": "What TIME is it",
+      "file": "assets/audio/inline/23dc58b1b5472202.mp3"
+    },
+    {
       "id": "9945eac2d166c220",
       "text": "What time is it",
       "file": "assets/audio/inline/9945eac2d166c220.mp3"
@@ -10555,6 +10935,11 @@
       "id": "a1a8c1c326330b7c",
       "text": "When I get home I'll call you",
       "file": "assets/audio/inline/a1a8c1c326330b7c.mp3"
+    },
+    {
+      "id": "c812b86c21535a08",
+      "text": "When I GET HOME I'll call you",
+      "file": "assets/audio/inline/c812b86c21535a08.mp3"
     },
     {
       "id": "e41431f6cad7fbda",
@@ -11052,14 +11437,14 @@
       "file": "assets/audio/inline/816d2b8711277c65.mp3"
     },
     {
-      "id": "85a39ab345d672ff",
-      "text": "Yes",
-      "file": "assets/audio/inline/85a39ab345d672ff.mp3"
-    },
-    {
       "id": "8a798890fe938171",
       "text": "yes",
       "file": "assets/audio/inline/8a798890fe938171.mp3"
+    },
+    {
+      "id": "85a39ab345d672ff",
+      "text": "Yes",
+      "file": "assets/audio/inline/85a39ab345d672ff.mp3"
     },
     {
       "id": "9523d9fbe79bcf3e",
@@ -11085,6 +11470,11 @@
       "id": "8b635d62667c18a1",
       "text": "You and I can talk",
       "file": "assets/audio/inline/8b635d62667c18a1.mp3"
+    },
+    {
+      "id": "ad5847ee85158602",
+      "text": "You and I kuhn talk",
+      "file": "assets/audio/inline/ad5847ee85158602.mp3"
     },
     {
       "id": "8cb3e30cfc13f662",
@@ -11132,6 +11522,11 @@
       "file": "assets/audio/inline/d3563832f0f2ba2c.mp3"
     },
     {
+      "id": "f052c29565f8a061",
+      "text": "You kuhn call me",
+      "file": "assets/audio/inline/f052c29565f8a061.mp3"
+    },
+    {
       "id": "c094d7e1e7e12864",
       "text": "You may want to",
       "file": "assets/audio/inline/c094d7e1e7e12864.mp3"
@@ -11140,6 +11535,11 @@
       "id": "069bdba053241804",
       "text": "You might have missed it",
       "file": "assets/audio/inline/069bdba053241804.mp3"
+    },
+    {
+      "id": "374eba685451e9d2",
+      "text": "You might uhv missed it",
+      "file": "assets/audio/inline/374eba685451e9d2.mp3"
     },
     {
       "id": "fcbf8cdaf20e7018",
@@ -11172,14 +11572,14 @@
       "file": "assets/audio/inline/b360802700dcae26.mp3"
     },
     {
-      "id": "49b171f506835fc9",
-      "text": "you SENT it",
-      "file": "assets/audio/inline/49b171f506835fc9.mp3"
-    },
-    {
       "id": "40d3eb04fab75363",
       "text": "You sent it",
       "file": "assets/audio/inline/40d3eb04fab75363.mp3"
+    },
+    {
+      "id": "49b171f506835fc9",
+      "text": "you SENT it",
+      "file": "assets/audio/inline/49b171f506835fc9.mp3"
     },
     {
       "id": "2cf7a09bdf2c778c",
