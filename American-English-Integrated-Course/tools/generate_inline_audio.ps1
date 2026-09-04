@@ -158,9 +158,17 @@ function Convert-StressedToMp3([string]$Text, [string]$Output, [string]$ItemId) 
             [void]$labels.Add("[$i`:a]")
         }
         $filter = (($labels -join '') + "concat=n=$($segments.Count):v=0:a=1[out]")
-        & $ffmpeg -y -v error @inputArgs -filter_complex $filter -map '[out]' -codec:a libmp3lame -q:a 4 $Output 2>$null
-        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $Output)) {
+        $joined = Join-Path $segmentRoot 'joined.mp3'
+        & $ffmpeg -y -v error @inputArgs -filter_complex $filter -map '[out]' -codec:a libmp3lame -q:a 4 $joined 2>$null
+        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $joined)) {
             throw "FFmpeg could not join stressed segments for $ItemId"
+        }
+        # Segment-level SAPI files contain their own tail padding. Trim the
+        # final joined file too, so emphasis never introduces long silence.
+        $bounds = Get-TrimBounds $joined
+        & $ffmpeg -y -v error -ss $bounds.Start -t $bounds.Duration -i $joined -codec:a libmp3lame -q:a 4 $Output 2>$null
+        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $Output)) {
+            throw "FFmpeg could not trim stressed audio for $ItemId"
         }
         return $true
     } finally {
