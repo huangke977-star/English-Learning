@@ -97,35 +97,98 @@ IPA_EXAMPLES = {
     "ɝ": "bird", "ɚ": "teacher", "u": "food", "ʊ": "book", "ɑ": "father", "ɔ": "talk",
     "eɪ": "day", "aɪ": "my", "ɔɪ": "boy", "oʊ": "go", "aʊ": "now",
     "p": "pen", "b": "book", "t": "tea", "d": "day", "k": "key", "g": "go",
+    "ɡ": "go", "ɹ": "red",
     "f": "fan", "v": "van", "θ": "thin", "ð": "this", "s": "see", "z": "zoo",
     "ʃ": "she", "ʒ": "measure", "h": "he", "tʃ": "cheese", "dʒ": "jump",
     "m": "me", "n": "no", "ŋ": "sing", "l": "lee", "r": "red", "j": "yes", "w": "we",
 }
 
+SLASH_PRONUNCIATION = re.compile(r"/[^/\r\n]+/")
+BRACKET_PRONUNCIATION = re.compile(r"\[[^\]\r\n]+\]")
+UNRESOLVED_CHOICE = re.compile(r"\([^()\r\n]*(?:\s*/\s*|\s*\|\s*)[^()\r\n]*\)")
+TECHNICAL_CODE = re.compile(r"(?:\.md$|\.html$|[/\\]|[_=<>]|->|=>|\b(?:IPA|SVO|SVC|SVOO|SVOC|SVA|SV|n\.?/v\.?|adj\.?/adv\.?)\b)", re.IGNORECASE)
+PRONOUN_LIST = {"i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them"}
+NON_SPEECH_TOKENS = {"s", "t", "ed", "est", "ing", "ity", "ly", "tion", "pu", "rec", "cord", "bout", "ssss", "zzzz"}
+SPEECH_COLUMN_NAMES = {
+    "英文", "英语", "例句", "句子", "短语", "表达", "词", "单词", "例词", "词或句子",
+    "对比", "句型与例句",
+}
+
+
+def normalize_ipa_token(token: str) -> str:
+    normalized = token.strip().replace("ː", "").replace("ɹ", "r").replace("ɡ", "g")
+    # Some teaching notes use ASCII capital I for the /ɪ/ symbol.
+    return "ɪ" if normalized == "I" else normalized
+
+
 def speech_text(value: str) -> str:
     """Return only the pronounceable item, never surrounding lesson prose."""
-    stripped = value.strip()
+    # Treat typographic apostrophes as ordinary English apostrophes so text
+    # such as “I’ve” remains one pronounceable word for SAPI.
+    normalized_value = value.translate(str.maketrans({"\u2018": "'", "\u2019": "'", "\u201b": "'", "\u02bc": "'"}))
+    stripped = normalized_value.strip()
+    if not stripped or re.search(r"[\u4e00-\u9fff]", stripped):
+        return ""
+
+    # Choice exercises and stress alternatives do not have one canonical
+    # utterance.  Suppressing their buttons is safer than synthesizing both
+    # answers as one nonsensical sentence.
+    if UNRESOLVED_CHOICE.search(stripped) or "___" in stripped:
+        return ""
+
     if stripped.startswith("/") and stripped.endswith("/"):
         token = stripped[1:-1].strip()
-        example = IPA_EXAMPLES.get(token.replace("ː", ""))
+        example = IPA_EXAMPLES.get(normalize_ipa_token(token))
         return example or ""
-    without_ipa = re.sub(r"/[^/\s]+/", " ", value)
-    words = re.findall(r"[A-Za-z]+(?:[''-][A-Za-z]+)*", without_ipa)
+
+    # A bracketed multi-phone transcription is a pronunciation annotation, not
+    # an English phrase that Microsoft SAPI can read reliably.
+    if stripped.startswith("[") and stripped.endswith("]"):
+        return ""
+
+    without_ipa = SLASH_PRONUNCIATION.sub(" ", normalized_value)
+    without_ipa = BRACKET_PRONUNCIATION.sub(" ", without_ipa)
+    # IPA annotations are whitespace-delimited (`see /si/`).  A slash joined
+    # to words means choice/list notation such as `you/we/they` or `t/d`.
+    slash_groups = list(SLASH_PRONUNCIATION.finditer(stripped))
+    for group in slash_groups:
+        before = stripped[group.start() - 1] if group.start() else " "
+        after = stripped[group.end()] if group.end() < len(stripped) else " "
+        if before not in " (\t" or after not in " ).,;:!?\t":
+            return ""
+    slash_free = SLASH_PRONUNCIATION.sub("", stripped)
+    if "/" in slash_free:
+        return ""
+    # File names, grammar labels, slash notation (for example t/d), and code
+    # operators are not learner-facing speech targets.  Run this after removing
+    # a genuine IPA annotation so `see /si/` can still resolve to `see`.
+    if TECHNICAL_CODE.search(without_ipa):
+        return ""
+
+    words = re.findall(r"[A-Za-z]+(?:['-][A-Za-z]+)*", without_ipa)
     if words:
+        if len(words) == 1 and words[0].casefold() in NON_SPEECH_TOKENS:
+            return ""
+        if len(words) > 1 and all(word.casefold() in PRONOUN_LIST for word in words):
+            return ""
+        # A lone all-caps teaching label such as REcord or SVO is not a word
+        # target.  Keep normal pronouns/acronyms such as I and ID playable.
+        if len(words) == 1 and words[0].isupper() and len(words[0]) > 2:
+            return ""
         return " ".join(words)
     ipa_tokens = re.findall(r"/([^/\s]+)/", value)
-    examples = [IPA_EXAMPLES.get(token.replace("ː", "")) for token in ipa_tokens]
+    examples = [IPA_EXAMPLES.get(normalize_ipa_token(token)) for token in ipa_tokens]
     if ipa_tokens and all(examples):
         return ", ".join(example for example in examples if example)
     return ""
 
 
-def listen_button(text: str) -> str:
+def listen_button(text: str, label: str | None = None) -> str:
     if not text:
         return ""
     INLINE_AUDIO_TEXTS.add(text)
     audio_id = hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
-    label = text if len(text) <= 60 else "这段英文"
+    label = label or (text if len(text) <= 60 else "这段英文")
     return (
         f'<button class="listen-button" type="button" data-audio="../../assets/audio/inline/{audio_id}.mp3" '
         f'aria-label="播放发音：{html.escape(label, quote=True)}" title="播放发音">&#128266;</button>'
@@ -133,11 +196,16 @@ def listen_button(text: str) -> str:
 
 
 def inline_code(value: str) -> str:
+    speech = speech_text(value)
+    stripped = value.strip()
+    label = None
+    if speech and stripped.startswith("/") and stripped.endswith("/"):
+        label = f"音标示例 {stripped}：{speech}"
     return (
         '<span class="pronunciation"><code>'
         + html.escape(value, quote=False)
         + "</code>"
-        + listen_button(speech_text(value))
+        + listen_button(speech, label)
         + "</span>"
     )
 
@@ -289,7 +357,7 @@ def render_markdown(unit: Unit) -> str:
                 i += 1
             head = "".join(f"<th>{inline_with_standalone_speech(cell)}</th>" for cell in rows[0])
             speech_column = next(
-                (index for index, cell in enumerate(rows[0]) if cell.strip() in {"英文", "对比", "单词", "例词"}),
+                (index for index, cell in enumerate(rows[0]) if cell.strip() in SPEECH_COLUMN_NAMES),
                 None,
             )
             body_rows = []
@@ -441,7 +509,7 @@ def write_assets(units: list[Unit]) -> None:
     )
     pages = ["./", "./index.html", "./plan.html", "./manifest.webmanifest", "./assets/styles.css", "./assets/app.js", "./assets/course-data.js", "./assets/app-icon.svg"]
     pages += [f"./books/book{number}.html" for number in BOOKS] + [f"./{unit.path}" for unit in units]
-    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v6";
+    (SITE / "sw.js").write_text(f"""const CACHE_NAME = "ae-course-mobile-v7";
 const PRECACHE = {json.dumps(pages, ensure_ascii=False)};
 self.addEventListener("install", (event) => {{ event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE))); self.skipWaiting(); }});
 self.addEventListener("activate", (event) => {{ event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))); self.clients.claim(); }});
@@ -450,8 +518,18 @@ self.addEventListener("fetch", (event) => {{ const request = event.request; cons
     (SITE / "manifest.webmanifest").write_text(json.dumps({"name": "美式英语综合能力训练", "short_name": "英语学习", "start_url": "./", "display": "standalone", "background_color": "#f6f2ea", "theme_color": "#173044", "lang": "zh-CN", "icons": [{"src": "assets/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}]}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def validate_audio_mapping() -> None:
+    """Fail the build if common IPA aliases resolve to the wrong example word."""
+    expected = {"/i/": "see", "/iː/": "see", "/ɪ/": "sit", "/I/": "sit"}
+    for notation, example in expected.items():
+        actual = speech_text(notation)
+        if actual != example:
+            raise RuntimeError(f"Audio mapping regression: {notation} -> {actual!r}, expected {example!r}")
+
+
 def main() -> None:
     INLINE_AUDIO_TEXTS.clear()
+    validate_audio_mapping()
     units = discover_units()
     for directory in (SITE, ASSETS, UNITS_DIR, BOOKS_DIR):
         directory.mkdir(parents=True, exist_ok=True)
